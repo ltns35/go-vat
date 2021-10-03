@@ -32,7 +32,7 @@ by jsVAT and many more.
 - [ ] Finland
 - [ ] France
 - [x] Germany
-- [ ] Greece
+- [x] Greece
 - [x] Hungary
 - [ ] Ireland
 - [ ] Italy

@@ -22,6 +22,7 @@ var allCountries = []countries.Calculer{
 	countries.Cyprus,
 	countries.CzechRepublic,
 	countries.Germany,
+	countries.Greece,
 	countries.Hungary,
 	countries.Luxembourg,
 	countries.Portugal,
@@ -43,7 +44,7 @@ func getCountryCodes(country *countries.Country) []string {
 
 	codes := country.Codes
 
-	if country.Name == "Greece" {
+	if country.Name == countries.Greece.Name {
 		codes = append(codes, "EL")
 	}
 
