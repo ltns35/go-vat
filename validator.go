@@ -17,6 +17,7 @@ var allCountries = []countries.Calculer{
 	countries.Austria,
 	countries.Belgium,
 	countries.Brazil,
+	countries.Bulgaria,
 	countries.Portugal,
 	countries.Spain,
 }
