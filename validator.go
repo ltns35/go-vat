@@ -15,6 +15,7 @@ var countriesVATDoesNotStartWithCountryCode = []string{
 var allCountries = []countries.Calculer{
 	countries.Andorra,
 	countries.Austria,
+	countries.Belgium,
 	countries.Brazil,
 	countries.Portugal,
 	countries.Spain,
