@@ -23,6 +23,7 @@ var allCountries = []countries.Calculer{
 	countries.CzechRepublic,
 	countries.Hungary,
 	countries.Portugal,
+	countries.Slovakia,
 	countries.Spain,
 }
 
