@@ -33,7 +33,7 @@ by jsVAT and many more.
 - [ ] France
 - [ ] Germany
 - [ ] Greece
-- [ ] Hungary
+- [x] Hungary
 - [ ] Ireland
 - [ ] Italy
 - [ ] Latvia
