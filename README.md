@@ -31,7 +31,7 @@ by jsVAT and many more.
 - [ ] Europe
 - [ ] Finland
 - [ ] France
-- [ ] Germany
+- [x] Germany
 - [ ] Greece
 - [x] Hungary
 - [ ] Ireland
