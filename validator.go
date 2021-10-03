@@ -9,7 +9,7 @@ import (
 )
 
 var countriesVATDoesNotStartWithCountryCode = []string{
-	"Brazil",
+	countries.Brazil.Name,
 }
 
 var allCountries = []countries.Calculer{

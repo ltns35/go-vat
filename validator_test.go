@@ -45,6 +45,28 @@ func TestCheckVAT(t *testing.T) {
 			wantErr: false,
 		},
 		{
+			name: "Brazil VALID",
+			args: args{
+				values: mocks.BrazilValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Brazil,
+				},
+			},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Brazil INVALID",
+			args: args{
+				values: mocks.BrazilInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Brazil,
+				},
+			},
+			want:    false,
+			wantErr: false,
+		},
+		{
 			name: "Portugal VALID",
 			args: args{
 				values: mocks.PortugalValidTests,
