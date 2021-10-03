@@ -14,9 +14,10 @@ var countriesVATDoesNotStartWithCountryCode = []string{
 
 var allCountries = []countries.Calculer{
 	countries.Andorra,
+	countries.Austria,
+	countries.Brazil,
 	countries.Portugal,
 	countries.Spain,
-	countries.Brazil,
 }
 
 func removeExtraChars(vat string) string {
