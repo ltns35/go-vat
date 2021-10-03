@@ -21,6 +21,7 @@ type Calculer interface {
 
 type CountryRules struct {
 	Multipliers map[string][]int `json:"multipliers"`
+	Lookup      []int            `json:"lookup"`
 	Regex       []string         `json:"regex"`
 	Additional  []string         `json:"additional"`
 }
