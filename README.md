@@ -29,7 +29,7 @@ by jsVAT and many more.
 - [ ] Denmark
 - [ ] Estonia
 - [ ] Europe
-- [ ] Finland
+- [x] Finland
 - [ ] France
 - [x] Germany
 - [x] Greece

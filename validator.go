@@ -21,6 +21,7 @@ var allCountries = []countries.Calculer{
 	countries.Croatia,
 	countries.Cyprus,
 	countries.CzechRepublic,
+	countries.Finland,
 	countries.Germany,
 	countries.Greece,
 	countries.Hungary,
