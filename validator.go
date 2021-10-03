@@ -16,6 +16,7 @@ var allCountries = []countries.Calculer{
 	countries.Andorra,
 	countries.Portugal,
 	countries.Spain,
+	countries.Brazil,
 }
 
 func removeExtraChars(vat string) string {
