@@ -50,7 +50,7 @@ by jsVAT and many more.
 - [x] Slovakia
 - [x] Slovenia
 - [x] Spain
-- [ ] Sweden
+- [x] Sweden
 - [ ] Switzerland
 - [ ] United Kingdom
 
