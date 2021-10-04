@@ -30,7 +30,7 @@ by jsVAT and many more.
 - [x] Estonia
 - [ ] Europe
 - [x] Finland
-- [ ] France
+- [x] France
 - [x] Germany
 - [x] Greece
 - [x] Hungary
