@@ -30,6 +30,7 @@ var allCountries = []countries.Calculer{
 	countries.Hungary,
 	countries.Italy,
 	countries.Luxembourg,
+	countries.Malta,
 	countries.Portugal,
 	countries.Slovakia,
 	countries.Spain,

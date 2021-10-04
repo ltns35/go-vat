@@ -39,7 +39,7 @@ by jsVAT and many more.
 - [ ] Latvia
 - [ ] Lithuania
 - [x] Luxembourg
-- [ ] Malta
+- [x] Malta
 - [ ] Netherlands
 - [ ] Norway
 - [ ] Poland
