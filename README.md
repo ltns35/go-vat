@@ -4,7 +4,7 @@ Check the validity of the format of a VAT number, list of taxes for each country
 
 This go library is based on the original [jsVAT](https://github.com/se-panfilov/jsvat) for JS/TS.
 
-For the moment the library is underdevelopment, but it will implement the VAT validation for all the countries supported
+For the moment the library is underdevelopment, but it will implement the VAT validation for all the supported countries
 by jsVAT and many more.
 
 ## How to use
@@ -36,7 +36,7 @@ by jsVAT and many more.
 - [x] Hungary
 - [ ] Ireland
 - [x] Italy
-- [ ] Latvia
+- [x] Latvia
 - [ ] Lithuania
 - [x] Luxembourg
 - [x] Malta
