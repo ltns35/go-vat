@@ -23,6 +23,7 @@ var allCountries = []countries.Calculer{
 	countries.CzechRepublic,
 	countries.Denmark,
 	countries.Finland,
+	countries.Estonia,
 	countries.Germany,
 	countries.Greece,
 	countries.Hungary,

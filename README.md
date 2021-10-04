@@ -27,7 +27,7 @@ by jsVAT and many more.
 - [x] Cyprus
 - [x] Czech Republic
 - [x] Denmark
-- [ ] Estonia
+- [x] Estonia
 - [ ] Europe
 - [x] Finland
 - [ ] France
