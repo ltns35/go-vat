@@ -41,7 +41,7 @@ by jsVAT and many more.
 - [x] Luxembourg
 - [x] Malta
 - [ ] Netherlands
-- [ ] Norway
+- [x] Norway
 - [ ] Poland
 - [x] Portugal
 - [ ] Romania
