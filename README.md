@@ -34,7 +34,7 @@ by jsVAT and many more.
 - [x] Germany
 - [x] Greece
 - [x] Hungary
-- [ ] Ireland
+- [x] Ireland
 - [x] Italy
 - [x] Latvia
 - [ ] Lithuania
