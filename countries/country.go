@@ -23,6 +23,7 @@ type CountryRules struct {
 	Multipliers map[string][]int  `json:"multipliers"`
 	TypeFormats map[string]string `json:"typeFormats"`
 	Lookup      []int             `json:"lookup"`
+	Check       string            `json:"check"`
 	Regex       []string          `json:"regex"`
 	Additional  []string          `json:"additional"`
 }
