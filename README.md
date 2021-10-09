@@ -44,7 +44,7 @@ by jsVAT and many more.
 - [x] Norway
 - [ ] Poland
 - [x] Portugal
-- [ ] Romania
+- [x] Romania
 - [x] Russia
 - [x] Serbia
 - [x] Slovakia
