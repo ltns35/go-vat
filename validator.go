@@ -41,6 +41,7 @@ var allCountries = []countries.Calculer{
 	countries.Slovenia,
 	countries.Spain,
 	countries.Sweden,
+	countries.Switzerland,
 }
 
 func removeExtraChars(vat string) string {

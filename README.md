@@ -51,7 +51,7 @@ by jsVAT and many more.
 - [x] Slovenia
 - [x] Spain
 - [x] Sweden
-- [ ] Switzerland
+- [x] Switzerland
 - [ ] United Kingdom
 
 ## LICENSE

@@ -21,403 +21,403 @@ func TestCheckVAT(t *testing.T) {
 		args    args
 		want    bool
 		wantErr bool
-	}{ /*
-			{
-				name: "Andorra VALID",
-				args: args{
-					values: mocks.AndorraValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Andorra,
-					},
+	}{
+		{
+			name: "Andorra VALID",
+			args: args{
+				values: mocks.AndorraValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Andorra,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Andorra INVALID",
-				args: args{
-					values: mocks.AndorraInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Andorra,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Andorra INVALID",
+			args: args{
+				values: mocks.AndorraInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Andorra,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Austria VALID",
-				args: args{
-					values: mocks.AustriaValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Austria,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Austria VALID",
+			args: args{
+				values: mocks.AustriaValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Austria,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Austria INVALID",
-				args: args{
-					values: mocks.AustriaInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Austria,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Austria INVALID",
+			args: args{
+				values: mocks.AustriaInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Austria,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Belgium VALID",
-				args: args{
-					values: mocks.BelgiumValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Belgium,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Belgium VALID",
+			args: args{
+				values: mocks.BelgiumValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Belgium,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Belgium INVALID",
-				args: args{
-					values: mocks.BelgiumInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Belgium,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Belgium INVALID",
+			args: args{
+				values: mocks.BelgiumInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Belgium,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Brazil VALID",
-				args: args{
-					values: mocks.BrazilValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Brazil,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Brazil VALID",
+			args: args{
+				values: mocks.BrazilValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Brazil,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Brazil INVALID",
-				args: args{
-					values: mocks.BrazilInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Brazil,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Brazil INVALID",
+			args: args{
+				values: mocks.BrazilInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Brazil,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Bulgaria VALID",
-				args: args{
-					values: mocks.BulgariaValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Bulgaria,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Bulgaria VALID",
+			args: args{
+				values: mocks.BulgariaValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Bulgaria,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Bulgaria INVALID",
-				args: args{
-					values: mocks.BulgariaInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Bulgaria,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Bulgaria INVALID",
+			args: args{
+				values: mocks.BulgariaInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Bulgaria,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Croatia VALID",
-				args: args{
-					values: mocks.CroatiaValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Croatia,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Croatia VALID",
+			args: args{
+				values: mocks.CroatiaValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Croatia,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Croatia INVALID",
-				args: args{
-					values: mocks.CroatiaInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Croatia,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Croatia INVALID",
+			args: args{
+				values: mocks.CroatiaInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Croatia,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Cyprus VALID",
-				args: args{
-					values: mocks.CyprusValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Cyprus,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Cyprus VALID",
+			args: args{
+				values: mocks.CyprusValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Cyprus,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Cyprus INVALID",
-				args: args{
-					values: mocks.CyprusInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Cyprus,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Cyprus INVALID",
+			args: args{
+				values: mocks.CyprusInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Cyprus,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Czech Republic VALID",
-				args: args{
-					values: mocks.CzechRepublicValidTests,
-					countriesList: []countries.Calculer{
-						&countries.CzechRepublic,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Czech Republic VALID",
+			args: args{
+				values: mocks.CzechRepublicValidTests,
+				countriesList: []countries.Calculer{
+					&countries.CzechRepublic,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Czech Republic INVALID",
-				args: args{
-					values: mocks.CzechRepublicInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.CzechRepublic,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Czech Republic INVALID",
+			args: args{
+				values: mocks.CzechRepublicInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.CzechRepublic,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Denmark VALID",
-				args: args{
-					values: mocks.DenmarkValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Denmark,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Denmark VALID",
+			args: args{
+				values: mocks.DenmarkValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Denmark,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Denmark INVALID",
-				args: args{
-					values: mocks.DenmarkInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Denmark,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Denmark INVALID",
+			args: args{
+				values: mocks.DenmarkInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Denmark,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Estonia VALID",
-				args: args{
-					values: mocks.EstoniaValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Estonia,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Estonia VALID",
+			args: args{
+				values: mocks.EstoniaValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Estonia,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Estonia INVALID",
-				args: args{
-					values: mocks.EstoniaInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Estonia,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Estonia INVALID",
+			args: args{
+				values: mocks.EstoniaInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Estonia,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Finland VALID",
-				args: args{
-					values: mocks.FinlandValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Finland,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Finland VALID",
+			args: args{
+				values: mocks.FinlandValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Finland,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Finland INVALID",
-				args: args{
-					values: mocks.FinlandInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Finland,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Finland INVALID",
+			args: args{
+				values: mocks.FinlandInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Finland,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "France VALID",
-				args: args{
-					values: mocks.FranceValidTests,
-					countriesList: []countries.Calculer{
-						&countries.France,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "France VALID",
+			args: args{
+				values: mocks.FranceValidTests,
+				countriesList: []countries.Calculer{
+					&countries.France,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "France INVALID",
-				args: args{
-					values: mocks.FranceInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.France,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "France INVALID",
+			args: args{
+				values: mocks.FranceInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.France,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Germany VALID",
-				args: args{
-					values: mocks.GermanyValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Germany,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Germany VALID",
+			args: args{
+				values: mocks.GermanyValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Germany,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Germany INVALID",
-				args: args{
-					values: mocks.GermanyInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Germany,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Germany INVALID",
+			args: args{
+				values: mocks.GermanyInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Germany,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Greece VALID",
-				args: args{
-					values: mocks.GreeceValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Greece,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Greece VALID",
+			args: args{
+				values: mocks.GreeceValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Greece,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Greece INVALID",
-				args: args{
-					values: mocks.GreeceInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Greece,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Greece INVALID",
+			args: args{
+				values: mocks.GreeceInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Greece,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Hungary VALID",
-				args: args{
-					values: mocks.HungaryValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Hungary,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Hungary VALID",
+			args: args{
+				values: mocks.HungaryValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Hungary,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Hungary INVALID",
-				args: args{
-					values: mocks.HungaryInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Hungary,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Hungary INVALID",
+			args: args{
+				values: mocks.HungaryInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Hungary,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Italy VALID",
-				args: args{
-					values: mocks.ItalyValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Italy,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Italy VALID",
+			args: args{
+				values: mocks.ItalyValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Italy,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Italy INVALID",
-				args: args{
-					values: mocks.ItalyInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Italy,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Italy INVALID",
+			args: args{
+				values: mocks.ItalyInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Italy,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Ireland VALID",
-				args: args{
-					values: mocks.IrelandValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Ireland,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Ireland VALID",
+			args: args{
+				values: mocks.IrelandValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Ireland,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Ireland INVALID",
-				args: args{
-					values: mocks.IrelandInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Ireland,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Ireland INVALID",
+			args: args{
+				values: mocks.IrelandInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Ireland,
 				},
-				want:    false,
-				wantErr: false,
 			},
-			{
-				name: "Latvia VALID",
-				args: args{
-					values: mocks.LatviaValidTests,
-					countriesList: []countries.Calculer{
-						&countries.Latvia,
-					},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Latvia VALID",
+			args: args{
+				values: mocks.LatviaValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Latvia,
 				},
-				want:    true,
-				wantErr: false,
 			},
-			{
-				name: "Latvia INVALID",
-				args: args{
-					values: mocks.LatviaInvalidTests,
-					countriesList: []countries.Calculer{
-						&countries.Latvia,
-					},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Latvia INVALID",
+			args: args{
+				values: mocks.LatviaInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Latvia,
 				},
-				want:    false,
-				wantErr: false,
-			},*/
+			},
+			want:    false,
+			wantErr: false,
+		},
 		{
 			name: "Lithuania VALID",
 			args: args{
@@ -633,6 +633,28 @@ func TestCheckVAT(t *testing.T) {
 				values: mocks.SwedenInvalidTests,
 				countriesList: []countries.Calculer{
 					&countries.Sweden,
+				},
+			},
+			want:    false,
+			wantErr: false,
+		},
+		{
+			name: "Switzerland VALID",
+			args: args{
+				values: mocks.SwitzerlandValidTests,
+				countriesList: []countries.Calculer{
+					&countries.Switzerland,
+				},
+			},
+			want:    true,
+			wantErr: false,
+		},
+		{
+			name: "Switzerland INVALID",
+			args: args{
+				values: mocks.SwitzerlandInvalidTests,
+				countriesList: []countries.Calculer{
+					&countries.Switzerland,
 				},
 			},
 			want:    false,
