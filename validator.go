@@ -29,6 +29,7 @@ import (
 	"github.com/ltns35/go-vat/countries/luxembourg"
 	"github.com/ltns35/go-vat/countries/malta"
 	"github.com/ltns35/go-vat/countries/netherlands"
+	"github.com/ltns35/go-vat/countries/north_macedonia"
 	"github.com/ltns35/go-vat/countries/norway"
 	"github.com/ltns35/go-vat/countries/poland"
 	"github.com/ltns35/go-vat/countries/portugal"
@@ -70,6 +71,7 @@ var allCountries = []countries.Calculer{
 	lithuania.VAT,
 	luxembourg.VAT,
 	malta.VAT,
+	north_macedonia.VAT,
 	norway.VAT,
 	netherlands.VAT,
 	poland.VAT,

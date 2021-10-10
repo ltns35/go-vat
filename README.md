@@ -79,6 +79,7 @@ if err != nil {
 - [x] Luxembourg
 - [x] Malta
 - [x] Netherlands
+- [x] North Macedonia
 - [x] Norway
 - [x] Poland
 - [x] Portugal
