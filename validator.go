@@ -43,6 +43,7 @@ import (
 	"github.com/ltns35/go-vat/countries/spain"
 	"github.com/ltns35/go-vat/countries/sweden"
 	"github.com/ltns35/go-vat/countries/switzerland"
+	"github.com/ltns35/go-vat/countries/turkey"
 	"github.com/ltns35/go-vat/countries/ukraine"
 	"github.com/ltns35/go-vat/countries/united_kingdom"
 )
@@ -89,6 +90,7 @@ var allCountries = []countries.Calculer{
 	spain.VAT,
 	sweden.VAT,
 	switzerland.VAT,
+	turkey.VAT,
 	ukraine.VAT,
 	united_kingdom.VAT,
 }
