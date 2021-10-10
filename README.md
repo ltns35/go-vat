@@ -91,7 +91,7 @@ if err != nil {
 - [ ] Nigeria
 - [x] North Macedonia
 - [x] Norway
-- [ ] Peru
+- [x] Peru
 - [x] Poland
 - [x] Portugal
 - [x] Romania

@@ -32,6 +32,7 @@ import (
 	"github.com/ltns35/go-vat/countries/netherlands"
 	"github.com/ltns35/go-vat/countries/north_macedonia"
 	"github.com/ltns35/go-vat/countries/norway"
+	"github.com/ltns35/go-vat/countries/peru"
 	"github.com/ltns35/go-vat/countries/poland"
 	"github.com/ltns35/go-vat/countries/portugal"
 	"github.com/ltns35/go-vat/countries/romania"
@@ -425,6 +426,20 @@ func TestCheckVAT(t *testing.T) {
 			country: &norway.VAT,
 		},
 		{
+			name: "Peru",
+			args: []args{
+				{
+					values: mocks.PeruValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.PeruInvalidTests,
+					want:   false,
+				},
+			},
+			country: &peru.VAT,
+		},
+		{
 			name: "Poland",
 			args: []args{
 				{
@@ -629,7 +644,14 @@ func TestCheckVAT(t *testing.T) {
 			for _, value := range arg.values {
 
 				count++
-				name := fmt.Sprintf("%s nº %d: %v", tt.name, count, arg.want)
+
+				valid := "VALID"
+
+				if !arg.want {
+					valid = "INVALID"
+				}
+
+				name := fmt.Sprintf("%s %s nº %d: %s", tt.name, valid, count, value)
 
 				t.Run(
 					name, func(t *testing.T) {
