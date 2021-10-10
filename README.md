@@ -42,7 +42,7 @@ by jsVAT and many more.
 - [x] Malta
 - [ ] Netherlands
 - [x] Norway
-- [ ] Poland
+- [x] Poland
 - [x] Portugal
 - [x] Romania
 - [x] Russia
