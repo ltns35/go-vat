@@ -103,7 +103,7 @@ if err != nil {
 - [x] Spain
 - [x] Sweden
 - [x] Switzerland
-- [ ] Turkey
+- [x] Turkey
 - [x] Ukraine
 - [x] United Kingdom
 - [ ] Uruguay
