@@ -2,7 +2,7 @@
 
 [![Made with Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)](https:/github.com/ltns35/go-vat)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https:/github.com/ltns35/go-vat/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https:/github.com/ltns35/go-vat/graphs/commit-activity)
 
 Check the validity of a VAT number without any HTTP request.
 
@@ -11,6 +11,7 @@ This go library is based on the original [jsVAT](https://github.com/se-panfilov/
 ## Features
 
 - [x] Check the validity of VAT numbers.
+- [ ] Display with format.
 - [ ] Retrieve the list of available taxes for each country.
 - [x] Extendable with custom countries/rules
 - [x] Offline
@@ -19,10 +20,17 @@ This go library is based on the original [jsVAT](https://github.com/se-panfilov/
 
 ```go
 
+// Check against all supported countries validators.
 vatResult, err := vat.CheckVAT("ADE000000E")
 if err != nil {
 // Handle error
 }
+
+// Check ONLY against Andorra validator.
+countries := []countries.Calculer{
+andorra.VAT,
+}
+vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 
 // output: vatResult
 //
@@ -108,6 +116,11 @@ if err != nil {
 - [x] Ukraine
 - [x] United Kingdom
 - [ ] Uruguay
+
+## Need an unsupported country
+
+If you need a country is not yet supported by the library **open a new issue** or **create a _pull request_** to be
+merged.
 
 ## LICENSE
 
