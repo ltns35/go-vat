@@ -52,7 +52,7 @@ by jsVAT and many more.
 - [x] Spain
 - [x] Sweden
 - [x] Switzerland
-- [ ] United Kingdom
+- [x] United Kingdom
 
 ## LICENSE
 
