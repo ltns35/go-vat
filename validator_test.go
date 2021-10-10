@@ -29,6 +29,7 @@ import (
 	"github.com/ltns35/go-vat/countries/malta"
 	"github.com/ltns35/go-vat/countries/mocks"
 	"github.com/ltns35/go-vat/countries/netherlands"
+	"github.com/ltns35/go-vat/countries/north_macedonia"
 	"github.com/ltns35/go-vat/countries/norway"
 	"github.com/ltns35/go-vat/countries/poland"
 	"github.com/ltns35/go-vat/countries/portugal"
@@ -376,6 +377,20 @@ func TestCheckVAT(t *testing.T) {
 				},
 			},
 			country: &netherlands.VAT,
+		},
+		{
+			name: "North Macedonia",
+			args: []args{
+				{
+					values: mocks.NorthMacedoniaValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.NorthMacedoniaInvalidTests,
+					want:   false,
+				},
+			},
+			country: &north_macedonia.VAT,
 		},
 		{
 			name: "Norway",
