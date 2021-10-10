@@ -1,20 +1,19 @@
 # Go VAT
 
-Check the validity of the format of a VAT number, list of taxes for each country.
+Check the validity of a VAT number without any HTTP request.
 
 This go library is based on the original [jsVAT](https://github.com/se-panfilov/jsvat) for JS/TS.
-
-For the moment the library is underdevelopment, but it will implement the VAT validation for all the supported countries
-by jsVAT and many more.
-
-## How to use
-
-**UNDERDEVELOPMENT DUE TO POSSIBLE BREAKING CHANGES**
 
 ## Features
 
 - [x] Check the validity of VAT numbers.
 - [ ] Retrieve the list of available taxes for each country.
+- [x] Extendable with custom countries/rules
+- [x] Offline
+
+## How to use
+
+**UNDERDEVELOPMENT DUE TO POSSIBLE BREAKING CHANGES**
 
 ## Supported countries
 
