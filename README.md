@@ -104,8 +104,8 @@ if err != nil {
 - [x] Sweden
 - [x] Switzerland
 - [ ] Turkey
+- [x] Ukraine
 - [x] United Kingdom
-- [ ] Ukraine
 - [ ] Uruguay
 
 ## LICENSE
