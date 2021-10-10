@@ -57,6 +57,7 @@ if err != nil {
 
 - [x] Albania
 - [x] Andorra
+- [x] Argentina
 - [x] Austria
 - [x] Belgium
 - [x] Brazil
