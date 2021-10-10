@@ -55,6 +55,7 @@ if err != nil {
 
 ## Supported countries
 
+- [x] Albania
 - [x] Andorra
 - [x] Austria
 - [x] Belgium
