@@ -1,0 +1,21 @@
+package mocks
+
+var AlbaniaValidTests = []string{
+	"ALJ99999999A",
+	"ALK99999999V",
+	"ALL99999999M",
+	"ALJ12345678A",
+	"ALJ00573612B",
+	"ALJ97325233C",
+	"ALJ47120410D",
+}
+
+var AlbaniaInvalidTests = []string{
+	"ALJ471204100",
+	"ALK471204102",
+	"ALL471204104",
+	"ALB47120410D",
+	"ALA00573612H",
+	"ALM47120410X",
+	"ALQ47667788Z",
+}

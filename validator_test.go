@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/ltns35/go-vat/countries"
+	"github.com/ltns35/go-vat/countries/albania"
 	"github.com/ltns35/go-vat/countries/andorra"
 	"github.com/ltns35/go-vat/countries/austria"
 	"github.com/ltns35/go-vat/countries/belgium"
@@ -54,6 +55,20 @@ func TestCheckVAT(t *testing.T) {
 		args    []args
 		country countries.Calculer
 	}{
+		{
+			name: "Albania",
+			args: []args{
+				{
+					values: mocks.AlbaniaValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.AlbaniaInvalidTests,
+					want:   false,
+				},
+			},
+			country: &albania.VAT,
+		},
 		{
 			name: "Andorra",
 			args: []args{
