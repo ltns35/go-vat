@@ -1,12 +1,14 @@
 # Go VAT
 
-[![Made with Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/gomods/athens.svg)](https:/github.com/ltns35/go-vat)
 [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https:/github.com/ltns35/go-vat/graphs/commit-activity)
 
 Check the validity of a VAT number without any HTTP request.
 
 This go library is based on the original [jsVAT](https://github.com/se-panfilov/jsvat) for JS/TS.
+
+The intention of this library is to offer to all gophers the ability to validate all the VAT numbers before they are
+stored in a database.
 
 ## Features
 
@@ -121,6 +123,16 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 
 If you need a country is not yet supported by the library **open a new issue** or **create a _pull request_** to be
 merged.
+
+## Testing
+
+The library is tested against the 2 latest stable major versions of Go.
+
+- 1.17.x
+- 1.16.x
+
+All the validators has been tested individually to ensure the correct working, if you need more tests don't hesitate to
+open a new issue with the values you want to be tested.
 
 ## LICENSE
 
