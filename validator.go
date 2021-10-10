@@ -6,45 +6,79 @@ import (
 	"strings"
 
 	"github.com/ltns35/go-vat/countries"
+	"github.com/ltns35/go-vat/countries/andorra"
+	"github.com/ltns35/go-vat/countries/austria"
+	"github.com/ltns35/go-vat/countries/belgium"
+	"github.com/ltns35/go-vat/countries/brazil"
+	"github.com/ltns35/go-vat/countries/bulgaria"
+	"github.com/ltns35/go-vat/countries/croatia"
+	"github.com/ltns35/go-vat/countries/cyprus"
+	"github.com/ltns35/go-vat/countries/czech_republic"
+	"github.com/ltns35/go-vat/countries/denmark"
+	"github.com/ltns35/go-vat/countries/estonia"
+	"github.com/ltns35/go-vat/countries/finland"
+	"github.com/ltns35/go-vat/countries/france"
+	"github.com/ltns35/go-vat/countries/germany"
+	"github.com/ltns35/go-vat/countries/greece"
+	"github.com/ltns35/go-vat/countries/hungary"
+	"github.com/ltns35/go-vat/countries/ireland"
+	"github.com/ltns35/go-vat/countries/italy"
+	"github.com/ltns35/go-vat/countries/latvia"
+	"github.com/ltns35/go-vat/countries/lithuania"
+	"github.com/ltns35/go-vat/countries/luxembourg"
+	"github.com/ltns35/go-vat/countries/malta"
+	"github.com/ltns35/go-vat/countries/norway"
+	"github.com/ltns35/go-vat/countries/poland"
+	"github.com/ltns35/go-vat/countries/portugal"
+	"github.com/ltns35/go-vat/countries/romania"
+	"github.com/ltns35/go-vat/countries/russia"
+	"github.com/ltns35/go-vat/countries/serbia"
+	"github.com/ltns35/go-vat/countries/slovakia"
+	"github.com/ltns35/go-vat/countries/slovenia"
+	"github.com/ltns35/go-vat/countries/spain"
+	"github.com/ltns35/go-vat/countries/sweden"
+	"github.com/ltns35/go-vat/countries/switzerland"
+	"github.com/ltns35/go-vat/countries/united_kingdom"
 )
 
 var countriesVATDoesNotStartWithCountryCode = []string{
-	countries.Brazil.Name,
+	brazil.VAT.Name,
 }
 
 var allCountries = []countries.Calculer{
-	countries.Andorra,
-	countries.Austria,
-	countries.Belgium,
-	countries.Brazil,
-	countries.Bulgaria,
-	countries.Croatia,
-	countries.Cyprus,
-	countries.CzechRepublic,
-	countries.Denmark,
-	countries.Estonia,
-	countries.Finland,
-	countries.France,
-	countries.Germany,
-	countries.Greece,
-	countries.Hungary,
-	countries.Italy,
-	countries.Ireland,
-	countries.Latvia,
-	countries.Lithuania,
-	countries.Luxembourg,
-	countries.Malta,
-	countries.Norway,
-	countries.Poland,
-	countries.Portugal,
-	countries.Romania,
-	countries.Russia,
-	countries.Serbia,
-	countries.Slovakia,
-	countries.Slovenia,
-	countries.Spain,
-	countries.Sweden,
-	countries.Switzerland,
+	andorra.VAT,
+	austria.VAT,
+	belgium.VAT,
+	brazil.VAT,
+	bulgaria.VAT,
+	croatia.VAT,
+	cyprus.VAT,
+	czech_republic.VAT,
+	denmark.VAT,
+	estonia.VAT,
+	finland.VAT,
+	france.VAT,
+	germany.VAT,
+	greece.VAT,
+	hungary.VAT,
+	italy.VAT,
+	ireland.VAT,
+	latvia.VAT,
+	lithuania.VAT,
+	luxembourg.VAT,
+	malta.VAT,
+	norway.VAT,
+	poland.VAT,
+	portugal.VAT,
+	romania.VAT,
+	russia.VAT,
+	serbia.VAT,
+	slovakia.VAT,
+	slovenia.VAT,
+	spain.VAT,
+	sweden.VAT,
+	switzerland.VAT,
+	united_kingdom.VAT,
 }
 
 func removeExtraChars(vat string) string {
@@ -61,7 +95,7 @@ func getCountryCodes(country *countries.Country) []string {
 
 	codes := country.Codes
 
-	if country.Name == countries.Greece.Name {
+	if country.Name == greece.VAT.Name {
 		codes = append(codes, "EL")
 	}
 
