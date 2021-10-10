@@ -18,7 +18,7 @@ var VAT = ukraine{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(UA)([0-9]{12})$",
+				"^(UA)(\\d{12})$",
 			},
 		},
 	},

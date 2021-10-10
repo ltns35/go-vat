@@ -83,6 +83,7 @@ if err != nil {
 - [x] Italy
 - [ ] Kazakhstan
 - [x] Latvia
+- [x] Liechtenstein
 - [x] Lithuania
 - [x] Luxembourg
 - [x] Malta

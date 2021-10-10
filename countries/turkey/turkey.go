@@ -18,7 +18,7 @@ var VAT = turkey{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(TR)([0-9]{10})$",
+				"^(TR)(\\d{10})$",
 			},
 		},
 	},

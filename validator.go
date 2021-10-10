@@ -26,6 +26,7 @@ import (
 	"github.com/ltns35/go-vat/countries/ireland"
 	"github.com/ltns35/go-vat/countries/italy"
 	"github.com/ltns35/go-vat/countries/latvia"
+	"github.com/ltns35/go-vat/countries/liechtenstein"
 	"github.com/ltns35/go-vat/countries/lithuania"
 	"github.com/ltns35/go-vat/countries/luxembourg"
 	"github.com/ltns35/go-vat/countries/malta"
@@ -74,6 +75,7 @@ var allCountries = []countries.Calculer{
 	italy.VAT,
 	ireland.VAT,
 	latvia.VAT,
+	liechtenstein.VAT,
 	lithuania.VAT,
 	luxembourg.VAT,
 	malta.VAT,
@@ -128,6 +130,8 @@ func getCountryCodes(country *countries.Country) []string {
 
 	if country.Name == greece.VAT.Name {
 		codes = append(codes, "EL")
+	} else if country.Name == liechtenstein.VAT.Name {
+		codes = append(codes, "FL")
 	}
 
 	return codes

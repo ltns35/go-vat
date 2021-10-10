@@ -18,7 +18,7 @@ var VAT = argentina{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(AR)([0-9]{11})$",
+				"^(AR)(\\d{11})$",
 			},
 		},
 	},

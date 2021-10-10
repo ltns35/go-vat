@@ -18,7 +18,7 @@ var VAT = northMacedonia{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(MK)([0-9]{13})$",
+				"^(MK)(\\d{13})$",
 			},
 		},
 	},
