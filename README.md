@@ -13,7 +13,41 @@ This go library is based on the original [jsVAT](https://github.com/se-panfilov/
 
 ## How to use
 
-**UNDERDEVELOPMENT DUE TO POSSIBLE BREAKING CHANGES**
+```go
+
+vatResult, err := vat.CheckVAT("ADE000000E")
+if err != nil {
+// Handle error
+}
+
+// output: vatResult
+/*
+	{
+	   "value":"ADF000000F",
+	   "isValid":true,
+	   "isSupportedCountry":true,
+	   "country":{
+	      "name":"Andorra",
+	      "codes":[
+	         "AD",
+	         "AND",
+	         "020"
+	      ],
+	      "rules":{
+	         "multipliers":null,
+	         "typeFormats":null,
+	         "lookup":null,
+	         "check":"",
+	         "regex":[
+	            "^(AD)([fealecdgopuFEALECDGOPU]{1}\\d{6}[fealecdgopuFEALECDGOPU]{1})$"
+	         ],
+	         "additional":null
+	      }
+	   }
+	}
+*/
+
+```
 
 ## Supported countries
 
