@@ -32,6 +32,7 @@ import (
 	"github.com/ltns35/go-vat/countries/netherlands"
 	"github.com/ltns35/go-vat/countries/north_macedonia"
 	"github.com/ltns35/go-vat/countries/norway"
+	"github.com/ltns35/go-vat/countries/peru"
 	"github.com/ltns35/go-vat/countries/poland"
 	"github.com/ltns35/go-vat/countries/portugal"
 	"github.com/ltns35/go-vat/countries/romania"
@@ -79,6 +80,7 @@ var allCountries = []countries.Calculer{
 	north_macedonia.VAT,
 	norway.VAT,
 	netherlands.VAT,
+	peru.VAT,
 	poland.VAT,
 	portugal.VAT,
 	romania.VAT,
