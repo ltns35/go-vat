@@ -85,6 +85,7 @@ if err != nil {
 - [x] Portugal
 - [x] Romania
 - [x] Russia
+- [x] San Marino
 - [x] Serbia
 - [x] Slovakia
 - [x] Slovenia
