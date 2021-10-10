@@ -59,29 +59,39 @@ if err != nil {
 - [x] Andorra
 - [x] Argentina
 - [x] Austria
+- [ ] Belarus
 - [x] Belgium
+- [ ] Bolivia
 - [x] Brazil
 - [x] Bulgaria
+- [ ] Canada
 - [x] Croatia
 - [x] Cyprus
 - [x] Czech Republic
 - [x] Denmark
+- [ ] Ecuador
 - [x] Estonia
 - [ ] Europe
 - [x] Finland
 - [x] France
 - [x] Germany
 - [x] Greece
+- [ ] Guatemala
 - [x] Hungary
+- [ ] Indonesia
 - [x] Ireland
 - [x] Italy
+- [ ] Kazakhstan
 - [x] Latvia
 - [x] Lithuania
 - [x] Luxembourg
 - [x] Malta
 - [x] Netherlands
+- [ ] New Zealand
+- [ ] Nigeria
 - [x] North Macedonia
 - [x] Norway
+- [ ] Peru
 - [x] Poland
 - [x] Portugal
 - [x] Romania
@@ -93,7 +103,10 @@ if err != nil {
 - [x] Spain
 - [x] Sweden
 - [x] Switzerland
+- [ ] Turkey
 - [x] United Kingdom
+- [ ] Ukraine
+- [ ] Uruguay
 
 ## LICENSE
 
