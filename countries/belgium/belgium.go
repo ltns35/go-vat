@@ -51,6 +51,6 @@ func (b belgium) Calc(vat string) bool {
 	return check == float64(lastDigits)
 }
 
-func (b belgium) GetCountry() countries.Country {
-	return b.Country
+func (b belgium) GetCountry() *countries.Country {
+	return &b.Country
 }

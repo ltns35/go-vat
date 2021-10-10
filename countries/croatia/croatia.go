@@ -49,6 +49,6 @@ func (c croatia) Calc(vat string) bool {
 	return (product+expect)%10 == 1
 }
 
-func (c croatia) GetCountry() countries.Country {
-	return c.Country
+func (c croatia) GetCountry() *countries.Country {
+	return &c.Country
 }

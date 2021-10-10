@@ -66,6 +66,6 @@ func (n norway) Calc(vat string) bool {
 	return false
 }
 
-func (n norway) GetCountry() countries.Country {
-	return n.Country
+func (n norway) GetCountry() *countries.Country {
+	return &n.Country
 }

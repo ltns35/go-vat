@@ -28,6 +28,6 @@ func (a andorra) Calc(vat string) bool {
 	return len(vat) == 8
 }
 
-func (a andorra) GetCountry() countries.Country {
-	return a.Country
+func (a andorra) GetCountry() *countries.Country {
+	return &a.Country
 }

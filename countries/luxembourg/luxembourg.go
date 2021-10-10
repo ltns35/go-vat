@@ -39,6 +39,6 @@ func (l luxembourg) Calc(vat string) bool {
 	return checkDigit == expect
 }
 
-func (l luxembourg) GetCountry() countries.Country {
-	return l.Country
+func (l luxembourg) GetCountry() *countries.Country {
+	return &l.Country
 }

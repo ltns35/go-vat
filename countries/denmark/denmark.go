@@ -49,6 +49,6 @@ func (d denmark) Calc(vat string) bool {
 	return total%11 == 0
 }
 
-func (d denmark) GetCountry() countries.Country {
-	return d.Country
+func (d denmark) GetCountry() *countries.Country {
+	return &d.Country
 }

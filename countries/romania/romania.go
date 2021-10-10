@@ -64,6 +64,6 @@ func (r romania) Calc(vat string) bool {
 	return total == expect
 }
 
-func (r romania) GetCountry() countries.Country {
-	return r.Country
+func (r romania) GetCountry() *countries.Country {
+	return &r.Country
 }

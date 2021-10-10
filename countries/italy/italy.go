@@ -87,6 +87,6 @@ func (i italy) Calc(vat string) bool {
 	return total == float64(expect)
 }
 
-func (i italy) GetCountry() countries.Country {
-	return i.Country
+func (i italy) GetCountry() *countries.Country {
+	return &i.Country
 }

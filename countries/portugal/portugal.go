@@ -38,8 +38,8 @@ var VAT = portugal{
 	},
 }
 
-func (p portugal) GetCountry() countries.Country {
-	return p.Country
+func (p portugal) GetCountry() *countries.Country {
+	return &p.Country
 }
 
 func (p portugal) Calc(vat string) bool {

@@ -98,8 +98,8 @@ func (n netherlands) Calc(vat string) bool {
 	return total == expect || isNinetySevenMod(concat)
 }
 
-func (n netherlands) GetCountry() countries.Country {
-	return n.Country
+func (n netherlands) GetCountry() *countries.Country {
+	return &n.Country
 }
 
 func getCharValue(char rune) int {

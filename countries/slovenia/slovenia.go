@@ -59,6 +59,6 @@ func (s slovenia) Calc(vat string) bool {
 	return !!(total != 11 && total == expect)
 }
 
-func (s slovenia) GetCountry() countries.Country {
-	return s.Country
+func (s slovenia) GetCountry() *countries.Country {
+	return &s.Country
 }

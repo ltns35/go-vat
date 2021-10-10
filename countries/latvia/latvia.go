@@ -86,6 +86,6 @@ func (l latvia) Calc(vat string) bool {
 	}
 }
 
-func (l latvia) GetCountry() countries.Country {
-	return l.Country
+func (l latvia) GetCountry() *countries.Country {
+	return &l.Country
 }

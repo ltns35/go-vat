@@ -70,8 +70,8 @@ func (l lithuania) Calc(vat string) bool {
 	return check9DigitVat(vat, l.Rules) || check12DigitVat(vat, l.Rules)
 }
 
-func (l lithuania) GetCountry() countries.Country {
-	return l.Country
+func (l lithuania) GetCountry() *countries.Country {
+	return &l.Country
 }
 
 func extractDigit1(vat string, multiplierList []int, key int) int {

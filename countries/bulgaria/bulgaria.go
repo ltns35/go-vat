@@ -75,8 +75,8 @@ func (b bulgaria) Calc(vat string) bool {
 		miscellaneousVAT(vat, b.Rules.Multipliers)
 }
 
-func (b bulgaria) GetCountry() countries.Country {
-	return b.Country
+func (b bulgaria) GetCountry() *countries.Country {
+	return &b.Country
 }
 
 func increase(value int, vat string, from int, to int, incr int) int {

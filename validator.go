@@ -83,6 +83,21 @@ var allCountries = []countries.Calculer{
 	united_kingdom.VAT,
 }
 
+func makeResult(vat string, isValid bool, country *countries.Country) *CheckResult {
+
+	var checkResult CheckResult
+
+	checkResult.Value = vat
+	checkResult.IsValid = isValid
+	checkResult.Country = country
+
+	if country != nil {
+		checkResult.IsSupportedCountry = true
+	}
+
+	return &checkResult
+}
+
 func removeExtraChars(vat string) string {
 
 	regex := regexp.MustCompile(`(\s|-|\.|\/)+`)
@@ -109,7 +124,7 @@ func getCountry(vat string, countriesList []countries.Calculer) (countries.Calcu
 	for _, c := range countriesList {
 
 		country := c.GetCountry()
-		if startsWithCode(vat, &country) || (!isVATStartWithCountryCode(country.Name) && isVATStartWithNumber(vat)) {
+		if startsWithCode(vat, country) || (!isVATStartWithCountryCode(country.Name) && isVATStartWithNumber(vat)) {
 			return c, nil
 		}
 	}
@@ -176,10 +191,10 @@ func isVatValid(vat string, country countries.Calculer) bool {
 	return country.Calc(cleanVAT)
 }
 
-func CheckVAT(vat string, countriesList ...countries.Calculer) (bool, error) {
+func CheckVAT(vat string, countriesList ...countries.Calculer) (*CheckResult, error) {
 
 	if strings.Trim(vat, " ") == "" {
-		return false, nil
+		return makeResult(vat, false, nil), nil
 	}
 
 	cleanVAT := removeExtraChars(vat)
@@ -190,8 +205,10 @@ func CheckVAT(vat string, countriesList ...countries.Calculer) (bool, error) {
 
 	country, err := getCountry(cleanVAT, countriesList)
 	if err != nil {
-		return false, err
+		return nil, err
 	}
 
-	return isVatValid(cleanVAT, country), nil
+	isValid := isVatValid(cleanVAT, country)
+
+	return makeResult(cleanVAT, isValid, country.GetCountry()), nil
 }

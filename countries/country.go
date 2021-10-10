@@ -10,13 +10,13 @@ func (c Country) Calc(vat string) bool {
 	return false
 }
 
-func (c Country) GetCountry() Country {
-	return c
+func (c Country) GetCountry() *Country {
+	return &c
 }
 
 type Calculer interface {
 	Calc(vat string) bool
-	GetCountry() Country
+	GetCountry() *Country
 }
 
 type CountryRules struct {

@@ -90,8 +90,8 @@ func (s spain) Calc(vat string) bool {
 	return false
 }
 
-func (s spain) GetCountry() countries.Country {
-	return s.Country
+func (s spain) GetCountry() *countries.Country {
+	return &s.Country
 }
 
 func extractDigitAndMultiplyByCounter(vat string, multipliers []int, total float64) int {

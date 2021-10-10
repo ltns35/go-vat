@@ -59,8 +59,8 @@ func (u unitedKingdom) Calc(vat string) bool {
 	return isStandardOrCommercialNumber(vat, u.Rules.Multipliers["common"])
 }
 
-func (u unitedKingdom) GetCountry() countries.Country {
-	return u.Country
+func (u unitedKingdom) GetCountry() *countries.Country {
+	return &u.Country
 }
 
 func isGovernmentDepartment(vat string) bool {

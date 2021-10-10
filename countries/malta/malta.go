@@ -57,6 +57,6 @@ func (m malta) Calc(vat string) bool {
 	return total == expect
 }
 
-func (m malta) GetCountry() countries.Country {
-	return m.Country
+func (m malta) GetCountry() *countries.Country {
+	return &m.Country
 }

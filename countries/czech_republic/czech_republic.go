@@ -72,8 +72,8 @@ func (c czechRepublic) Calc(vat string) bool {
 
 }
 
-func (c czechRepublic) GetCountry() countries.Country {
-	return c.Country
+func (c czechRepublic) GetCountry() *countries.Country {
+	return &c.Country
 }
 
 func isLegalEntities(vat string, multipliers []int, additional string) bool {

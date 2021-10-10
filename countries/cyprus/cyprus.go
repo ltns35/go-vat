@@ -50,8 +50,8 @@ func (c cyprus) Calc(vat string) bool {
 	return totalChar == expect
 }
 
-func (c cyprus) GetCountry() countries.Country {
-	return c.Country
+func (c cyprus) GetCountry() *countries.Country {
+	return &c.Country
 }
 
 func extractAndMultiplyByCounter(vat string, total int) int {

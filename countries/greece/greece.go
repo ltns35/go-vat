@@ -67,6 +67,6 @@ func (g greece) Calc(vat string) bool {
 	return total == expect
 }
 
-func (g greece) GetCountry() countries.Country {
-	return g.Country
+func (g greece) GetCountry() *countries.Country {
+	return &g.Country
 }

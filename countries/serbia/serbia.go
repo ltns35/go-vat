@@ -49,6 +49,6 @@ func (s serbia) Calc(vat string) bool {
 	return checkDigit == expect
 }
 
-func (s serbia) GetCountry() countries.Country {
-	return s.Country
+func (s serbia) GetCountry() *countries.Country {
+	return &s.Country
 }

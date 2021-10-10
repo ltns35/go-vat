@@ -65,6 +65,6 @@ func (a austria) Calc(vat string) bool {
 	return int(total) == lastNum
 }
 
-func (a austria) GetCountry() countries.Country {
-	return a.Country
+func (a austria) GetCountry() *countries.Country {
+	return &a.Country
 }

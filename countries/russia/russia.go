@@ -70,8 +70,8 @@ func (r russia) Calc(vat string) bool {
 	return check10DigitINN(vat, r.Rules) || check12DigitINN(vat, r.Rules)
 }
 
-func (r russia) GetCountry() countries.Country {
-	return r.Country
+func (r russia) GetCountry() *countries.Country {
+	return &r.Country
 }
 
 func check10DigitINN(vat string, rules countries.CountryRules) bool {

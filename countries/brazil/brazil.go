@@ -67,8 +67,8 @@ func (b brazil) Calc(vat string) bool {
 	return numbers[12] == getRemaining(checkers[0]) && numbers[13] == getRemaining(checkers[1])
 }
 
-func (b brazil) GetCountry() countries.Country {
-	return b.Country
+func (b brazil) GetCountry() *countries.Country {
+	return &b.Country
 }
 
 // Generate check sums. Multiply numbers to validators and sum them to generate
