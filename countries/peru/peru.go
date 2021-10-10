@@ -18,7 +18,7 @@ var VAT = peru{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(PE)([0-9]{11})$",
+				"^(PE)(\\d{11})$",
 			},
 		},
 	},

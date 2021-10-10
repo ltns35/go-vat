@@ -18,7 +18,7 @@ var VAT = sanMarino{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(SM)([0-9]{5})$",
+				"^(SM)(\\d{5})$",
 			},
 		},
 	},

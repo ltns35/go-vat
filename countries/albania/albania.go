@@ -18,7 +18,7 @@ var VAT = albania{
 		},
 		Rules: countries.CountryRules{
 			Regex: []string{
-				"^(AL)([JKL][0-9]{8}[A-Z])$",
+				"^(AL)([JKL]\\d{8}[A-Z])$",
 			},
 		},
 	},
