@@ -5,28 +5,8 @@ import (
 	"testing"
 
 	"github.com/ltns35/go-vat/countries"
-	"github.com/ltns35/go-vat/countries/andorra"
-	"github.com/ltns35/go-vat/countries/austria"
-	"github.com/ltns35/go-vat/countries/belgium"
-	"github.com/ltns35/go-vat/countries/brazil"
-	"github.com/ltns35/go-vat/countries/bulgaria"
-	"github.com/ltns35/go-vat/countries/croatia"
-	"github.com/ltns35/go-vat/countries/cyprus"
-	"github.com/ltns35/go-vat/countries/czech_republic"
-	"github.com/ltns35/go-vat/countries/denmark"
-	"github.com/ltns35/go-vat/countries/estonia"
-	"github.com/ltns35/go-vat/countries/finland"
-	"github.com/ltns35/go-vat/countries/france"
-	"github.com/ltns35/go-vat/countries/germany"
-	"github.com/ltns35/go-vat/countries/greece"
-	"github.com/ltns35/go-vat/countries/hungary"
-	"github.com/ltns35/go-vat/countries/ireland"
-	"github.com/ltns35/go-vat/countries/italy"
-	"github.com/ltns35/go-vat/countries/latvia"
-	"github.com/ltns35/go-vat/countries/lithuania"
-	"github.com/ltns35/go-vat/countries/luxembourg"
-	"github.com/ltns35/go-vat/countries/malta"
 	"github.com/ltns35/go-vat/countries/mocks"
+	"github.com/ltns35/go-vat/countries/netherlands"
 	"github.com/ltns35/go-vat/countries/norway"
 	"github.com/ltns35/go-vat/countries/poland"
 	"github.com/ltns35/go-vat/countries/portugal"
@@ -53,7 +33,7 @@ func TestCheckVAT(t *testing.T) {
 		args    []args
 		country countries.Calculer
 	}{
-		{
+		/*{
 			name: "Andorra",
 			args: []args{
 				{
@@ -346,6 +326,20 @@ func TestCheckVAT(t *testing.T) {
 				},
 			},
 			country: &malta.VAT,
+		},*/
+		{
+			name: "Netherlands",
+			args: []args{
+				{
+					values: mocks.NetherlandsValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.NetherlandsInvalidTests,
+					want:   false,
+				},
+			},
+			country: &netherlands.VAT,
 		},
 		{
 			name: "Norway",

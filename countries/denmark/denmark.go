@@ -11,7 +11,7 @@ type denmark struct {
 
 var VAT = denmark{
 	Country: countries.Country{
-		Name: "VAT",
+		Name: "Denmark",
 		Codes: []string{
 			"DK",
 			"DNK",

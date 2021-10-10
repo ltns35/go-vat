@@ -40,7 +40,7 @@ by jsVAT and many more.
 - [x] Lithuania
 - [x] Luxembourg
 - [x] Malta
-- [ ] Netherlands
+- [x] Netherlands
 - [x] Norway
 - [x] Poland
 - [x] Portugal
