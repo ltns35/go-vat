@@ -71,7 +71,7 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 - [x] Austria
 - [x] Belarus
 - [x] Belgium
-- [ ] Bolivia
+- [x] Bolivia
 - [x] Brazil
 - [x] Bulgaria
 - [ ] Canada
