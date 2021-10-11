@@ -88,6 +88,7 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 - [x] Greece
 - [ ] Guatemala
 - [x] Hungary
+- [x] Hong Kong
 - [ ] Indonesia
 - [x] Ireland
 - [x] Italy
