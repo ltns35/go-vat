@@ -10,7 +10,10 @@ This go library is based on the original [jsVAT](https://github.com/se-panfilov/
 The intention of this library is to offer to all gophers the ability to validate all the VAT numbers before they are
 stored in a database.
 
-## Features
+## :gear: Installation
+> go install github.com/ltns35/go-vat
+
+## :dart: Features
 
 - [x] Check the validity of VAT numbers.
 - [ ] Display with format.
@@ -18,7 +21,7 @@ stored in a database.
 - [x] Extendable with custom countries/rules
 - [x] Offline
 
-## How to use
+## :books: How to use
 
 ```go
 
@@ -63,7 +66,7 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 
 ```
 
-## Supported countries
+## :earth_africa: Supported countries
 
 - [x] Albania
 - [x] Andorra
@@ -124,12 +127,12 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 - [x] United Kingdom
 - [ ] Uruguay
 
-## Need an unsupported country
+## :compass: Need an unsupported country
 
 If you need a country is not yet supported by the library **open a new issue** or **create a _pull request_** to be
 merged.
 
-## Testing
+## :test_tube: Testing
 
 The library is tested against the 2 latest stable major versions of Go.
 
@@ -139,6 +142,6 @@ The library is tested against the 2 latest stable major versions of Go.
 All the validators has been tested individually to ensure the correct working, if you need more tests don't hesitate to
 open a new issue with the values you want to be tested.
 
-## LICENSE
+## :warning: LICENSE
 
 The library is under the MIT license, so you can use it for free for commercial products.
