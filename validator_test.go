@@ -11,6 +11,7 @@ import (
 	"github.com/ltns35/go-vat/countries/austria"
 	"github.com/ltns35/go-vat/countries/belarus"
 	"github.com/ltns35/go-vat/countries/belgium"
+	"github.com/ltns35/go-vat/countries/bolivia"
 	"github.com/ltns35/go-vat/countries/brazil"
 	"github.com/ltns35/go-vat/countries/bulgaria"
 	"github.com/ltns35/go-vat/countries/croatia"
@@ -146,6 +147,20 @@ func TestCheckVAT(t *testing.T) {
 				},
 			},
 			country: &belgium.VAT,
+		},
+		{
+			name: "Bolivia",
+			args: []args{
+				{
+					values: mocks.BoliviaValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.BoliviaInvalidTests,
+					want:   false,
+				},
+			},
+			country: &bolivia.VAT,
 		},
 		{
 			name: "Brazil",
