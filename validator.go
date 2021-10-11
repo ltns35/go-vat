@@ -10,6 +10,7 @@ import (
 	"github.com/ltns35/go-vat/countries/andorra"
 	"github.com/ltns35/go-vat/countries/argentina"
 	"github.com/ltns35/go-vat/countries/austria"
+	"github.com/ltns35/go-vat/countries/belarus"
 	"github.com/ltns35/go-vat/countries/belgium"
 	"github.com/ltns35/go-vat/countries/brazil"
 	"github.com/ltns35/go-vat/countries/bulgaria"
@@ -59,6 +60,7 @@ var allCountries = []countries.Calculer{
 	andorra.VAT,
 	argentina.VAT,
 	austria.VAT,
+	belarus.VAT,
 	belgium.VAT,
 	brazil.VAT,
 	bulgaria.VAT,
