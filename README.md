@@ -11,6 +11,7 @@ The intention of this library is to offer to all gophers the ability to validate
 stored in a database.
 
 ## :gear: Installation
+
 > go install github.com/ltns35/go-vat
 
 ## :dart: Features
