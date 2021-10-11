@@ -15,6 +15,7 @@ import (
 	"github.com/ltns35/go-vat/countries/bolivia"
 	"github.com/ltns35/go-vat/countries/brazil"
 	"github.com/ltns35/go-vat/countries/bulgaria"
+	"github.com/ltns35/go-vat/countries/canada"
 	"github.com/ltns35/go-vat/countries/croatia"
 	"github.com/ltns35/go-vat/countries/cyprus"
 	"github.com/ltns35/go-vat/countries/czech_republic"
@@ -66,6 +67,7 @@ var allCountries = []countries.Calculer{
 	bolivia.VAT,
 	brazil.VAT,
 	bulgaria.VAT,
+	canada.VAT,
 	croatia.VAT,
 	cyprus.VAT,
 	czech_republic.VAT,
