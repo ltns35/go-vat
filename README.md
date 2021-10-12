@@ -12,7 +12,15 @@ stored in a database.
 
 ## :gear: Installation
 
-> go install github.com/ltns35/go-vat
+Go v1.17.x or newer (RECOMMENDED)
+```
+go install github.com/ltns35/go-vat
+```
+
+Go v1.16.x or older
+```
+go get -u github.com/ltns35/go-vat
+```
 
 ## :dart: Features
 
