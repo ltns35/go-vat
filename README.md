@@ -105,7 +105,7 @@ vatResult, err = vat.CheckVAT("ADE000000E", countries...)
 - [ ] Indonesia
 - [x] Ireland
 - [x] Italy
-- [ ] Kazakhstan
+- [x] Kazakhstan
 - [ ] Korea, Republic of
 - [x] Latvia
 - [x] Liechtenstein
