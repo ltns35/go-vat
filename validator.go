@@ -6,119 +6,72 @@ import (
 	"strings"
 
 	"github.com/ltns35/go-vat/countries"
-	"github.com/ltns35/go-vat/countries/albania"
-	"github.com/ltns35/go-vat/countries/andorra"
-	"github.com/ltns35/go-vat/countries/argentina"
-	"github.com/ltns35/go-vat/countries/austria"
-	"github.com/ltns35/go-vat/countries/belarus"
-	"github.com/ltns35/go-vat/countries/belgium"
-	"github.com/ltns35/go-vat/countries/bolivia"
-	"github.com/ltns35/go-vat/countries/brazil"
-	"github.com/ltns35/go-vat/countries/bulgaria"
-	"github.com/ltns35/go-vat/countries/canada"
-	"github.com/ltns35/go-vat/countries/croatia"
-	"github.com/ltns35/go-vat/countries/cyprus"
-	"github.com/ltns35/go-vat/countries/czech_republic"
-	"github.com/ltns35/go-vat/countries/denmark"
-	"github.com/ltns35/go-vat/countries/estonia"
-	"github.com/ltns35/go-vat/countries/finland"
-	"github.com/ltns35/go-vat/countries/france"
-	"github.com/ltns35/go-vat/countries/germany"
-	"github.com/ltns35/go-vat/countries/greece"
-	"github.com/ltns35/go-vat/countries/hong_kong"
-	"github.com/ltns35/go-vat/countries/hungary"
-	"github.com/ltns35/go-vat/countries/ireland"
-	"github.com/ltns35/go-vat/countries/italy"
-	"github.com/ltns35/go-vat/countries/kazakhstan"
-	"github.com/ltns35/go-vat/countries/latvia"
-	"github.com/ltns35/go-vat/countries/liechtenstein"
-	"github.com/ltns35/go-vat/countries/lithuania"
-	"github.com/ltns35/go-vat/countries/luxembourg"
-	"github.com/ltns35/go-vat/countries/malta"
-	"github.com/ltns35/go-vat/countries/netherlands"
-	"github.com/ltns35/go-vat/countries/north_macedonia"
-	"github.com/ltns35/go-vat/countries/norway"
-	"github.com/ltns35/go-vat/countries/peru"
-	"github.com/ltns35/go-vat/countries/poland"
-	"github.com/ltns35/go-vat/countries/portugal"
-	"github.com/ltns35/go-vat/countries/romania"
-	"github.com/ltns35/go-vat/countries/russia"
-	"github.com/ltns35/go-vat/countries/san_marino"
-	"github.com/ltns35/go-vat/countries/serbia"
-	"github.com/ltns35/go-vat/countries/slovakia"
-	"github.com/ltns35/go-vat/countries/slovenia"
-	"github.com/ltns35/go-vat/countries/spain"
-	"github.com/ltns35/go-vat/countries/sweden"
-	"github.com/ltns35/go-vat/countries/switzerland"
-	"github.com/ltns35/go-vat/countries/turkey"
-	"github.com/ltns35/go-vat/countries/ukraine"
-	"github.com/ltns35/go-vat/countries/united_kingdom"
 )
 
 var countriesVATDoesNotStartWithCountryCode = []string{
-	brazil.VAT.Name,
+	countries.Brazil.Name,
 }
 
 var allCountries = []countries.Calculer{
-	albania.VAT,
-	andorra.VAT,
-	argentina.VAT,
-	austria.VAT,
-	belarus.VAT,
-	belgium.VAT,
-	bolivia.VAT,
-	brazil.VAT,
-	bulgaria.VAT,
-	canada.VAT,
-	croatia.VAT,
-	cyprus.VAT,
-	czech_republic.VAT,
-	denmark.VAT,
-	estonia.VAT,
-	finland.VAT,
-	france.VAT,
-	germany.VAT,
-	greece.VAT,
-	hong_kong.VAT,
-	hungary.VAT,
-	italy.VAT,
-	ireland.VAT,
-	kazakhstan.VAT,
-	latvia.VAT,
-	liechtenstein.VAT,
-	lithuania.VAT,
-	luxembourg.VAT,
-	malta.VAT,
-	north_macedonia.VAT,
-	norway.VAT,
-	netherlands.VAT,
-	peru.VAT,
-	poland.VAT,
-	portugal.VAT,
-	romania.VAT,
-	russia.VAT,
-	san_marino.VAT,
-	serbia.VAT,
-	slovakia.VAT,
-	slovenia.VAT,
-	spain.VAT,
-	sweden.VAT,
-	switzerland.VAT,
-	turkey.VAT,
-	ukraine.VAT,
-	united_kingdom.VAT,
+	countries.Albania,
+	countries.Andorra,
+	countries.Argentina,
+	countries.Austria,
+	countries.Belarus,
+	countries.Belgium,
+	countries.Bolivia,
+	countries.Brazil,
+	countries.Bulgaria,
+	countries.Canada,
+	countries.Croatia,
+	countries.Cyprus,
+	countries.CzechRepublic,
+	countries.Denmark,
+	countries.Estonia,
+	countries.Finland,
+	countries.France,
+	countries.Germany,
+	countries.Greece,
+	countries.HongKong,
+	countries.Hungary,
+	countries.Ireland,
+	countries.Italy,
+	countries.Kazakhstan,
+	countries.Latvia,
+	countries.Liechtenstein,
+	countries.Lithuania,
+	countries.Luxembourg,
+	countries.Malta,
+	countries.Netherlands,
+	countries.NorthMacedonia,
+	countries.Norway,
+	countries.Peru,
+	countries.Poland,
+	countries.Portugal,
+	countries.Romania,
+	countries.Russia,
+	countries.SanMarino,
+	countries.Serbia,
+	countries.Slovakia,
+	countries.Slovenia,
+	countries.Spain,
+	countries.Sweden,
+	countries.Switzerland,
+	countries.Turkey,
+	countries.Ukraine,
+	countries.UnitedKingdom,
 }
 
-func makeResult(vat string, isValid bool, country *countries.Country) *CheckResult {
+func makeResult(vat string, isValid bool, isSupported bool, country countries.Country) *CheckResult {
 
 	var checkResult CheckResult
 
 	checkResult.Value = vat
 	checkResult.IsValid = isValid
-	checkResult.Country = country
+	checkResult.IsSupportedCountry = isSupported
 
-	if country != nil {
-		checkResult.IsSupportedCountry = true
+	if isSupported {
+		checkResult.Country = country
 	}
 
 	return &checkResult
@@ -134,13 +87,13 @@ func removeExtraChars(vat string) string {
 	return vat
 }
 
-func getCountryCodes(country *countries.Country) []string {
+func getCountryCodes(country countries.Country) []string {
 
 	codes := country.Codes
 
-	if country.Name == greece.VAT.Name {
+	if country.Name == countries.Greece.Name {
 		codes = append(codes, "EL")
-	} else if country.Name == liechtenstein.VAT.Name {
+	} else if country.Name == countries.Liechtenstein.Name {
 		codes = append(codes, "FL")
 	}
 
@@ -160,7 +113,7 @@ func getCountry(vat string, countriesList []countries.Calculer) (countries.Calcu
 	return nil, errors.New("cannot retrieve a supported country")
 }
 
-func startsWithCode(vat string, country *countries.Country) bool {
+func startsWithCode(vat string, country countries.Country) bool {
 	countryCodes := getCountryCodes(country)
 
 	for _, code := range countryCodes {
@@ -219,15 +172,15 @@ func isVatValid(vat string, country countries.Calculer) bool {
 	return country.Calc(cleanVAT)
 }
 
-func CheckVAT(vat string, countriesList ...countries.Calculer) (*CheckResult, error) {
+func Validate(vat string, countriesList ...countries.Calculer) (*CheckResult, error) {
 
 	if strings.Trim(vat, " ") == "" {
-		return makeResult(vat, false, nil), nil
+		return makeResult(vat, false, false, countries.Country{}), nil
 	}
 
 	cleanVAT := removeExtraChars(vat)
 
-	if len(countriesList) == 0 {
+	if countriesList[0] == nil {
 		countriesList = allCountries
 	}
 
@@ -238,5 +191,5 @@ func CheckVAT(vat string, countriesList ...countries.Calculer) (*CheckResult, er
 
 	isValid := isVatValid(cleanVAT, country)
 
-	return makeResult(cleanVAT, isValid, country.GetCountry()), nil
+	return makeResult(cleanVAT, isValid, true, country.GetCountry()), nil
 }

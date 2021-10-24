@@ -8,7 +8,7 @@ type Country struct {
 
 type Calculer interface {
 	Calc(vat string) bool
-	GetCountry() *Country
+	GetCountry() Country
 }
 
 type CountryRules struct {

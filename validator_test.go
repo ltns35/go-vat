@@ -5,54 +5,7 @@ import (
 	"testing"
 
 	"github.com/ltns35/go-vat/countries"
-	"github.com/ltns35/go-vat/countries/albania"
-	"github.com/ltns35/go-vat/countries/andorra"
-	"github.com/ltns35/go-vat/countries/argentina"
-	"github.com/ltns35/go-vat/countries/austria"
-	"github.com/ltns35/go-vat/countries/belarus"
-	"github.com/ltns35/go-vat/countries/belgium"
-	"github.com/ltns35/go-vat/countries/bolivia"
-	"github.com/ltns35/go-vat/countries/brazil"
-	"github.com/ltns35/go-vat/countries/bulgaria"
-	"github.com/ltns35/go-vat/countries/canada"
-	"github.com/ltns35/go-vat/countries/croatia"
-	"github.com/ltns35/go-vat/countries/cyprus"
-	"github.com/ltns35/go-vat/countries/czech_republic"
-	"github.com/ltns35/go-vat/countries/denmark"
-	"github.com/ltns35/go-vat/countries/estonia"
-	"github.com/ltns35/go-vat/countries/finland"
-	"github.com/ltns35/go-vat/countries/france"
-	"github.com/ltns35/go-vat/countries/germany"
-	"github.com/ltns35/go-vat/countries/greece"
-	"github.com/ltns35/go-vat/countries/hong_kong"
-	"github.com/ltns35/go-vat/countries/hungary"
-	"github.com/ltns35/go-vat/countries/ireland"
-	"github.com/ltns35/go-vat/countries/italy"
-	"github.com/ltns35/go-vat/countries/kazakhstan"
-	"github.com/ltns35/go-vat/countries/latvia"
-	"github.com/ltns35/go-vat/countries/liechtenstein"
-	"github.com/ltns35/go-vat/countries/lithuania"
-	"github.com/ltns35/go-vat/countries/luxembourg"
-	"github.com/ltns35/go-vat/countries/malta"
 	"github.com/ltns35/go-vat/countries/mocks"
-	"github.com/ltns35/go-vat/countries/netherlands"
-	"github.com/ltns35/go-vat/countries/north_macedonia"
-	"github.com/ltns35/go-vat/countries/norway"
-	"github.com/ltns35/go-vat/countries/peru"
-	"github.com/ltns35/go-vat/countries/poland"
-	"github.com/ltns35/go-vat/countries/portugal"
-	"github.com/ltns35/go-vat/countries/romania"
-	"github.com/ltns35/go-vat/countries/russia"
-	"github.com/ltns35/go-vat/countries/san_marino"
-	"github.com/ltns35/go-vat/countries/serbia"
-	"github.com/ltns35/go-vat/countries/slovakia"
-	"github.com/ltns35/go-vat/countries/slovenia"
-	"github.com/ltns35/go-vat/countries/spain"
-	"github.com/ltns35/go-vat/countries/sweden"
-	"github.com/ltns35/go-vat/countries/switzerland"
-	"github.com/ltns35/go-vat/countries/turkey"
-	"github.com/ltns35/go-vat/countries/ukraine"
-	"github.com/ltns35/go-vat/countries/united_kingdom"
 )
 
 func TestCheckVAT(t *testing.T) {
@@ -79,7 +32,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &albania.VAT,
+			country: countries.Albania,
 		},
 		{
 			name: "Andorra",
@@ -93,7 +46,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &andorra.VAT,
+			country: countries.Andorra,
 		},
 		{
 			name: "Argentina",
@@ -107,7 +60,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &argentina.VAT,
+			country: countries.Argentina,
 		},
 		{
 			name: "Austria",
@@ -121,7 +74,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &austria.VAT,
+			country: countries.Austria,
 		},
 		{
 			name: "Belarus",
@@ -135,7 +88,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &belarus.VAT,
+			country: countries.Belarus,
 		},
 		{
 			name: "Belgium",
@@ -149,7 +102,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &belgium.VAT,
+			country: countries.Belgium,
 		},
 		{
 			name: "Bolivia",
@@ -163,7 +116,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &bolivia.VAT,
+			country: countries.Bolivia,
 		},
 		{
 			name: "Brazil",
@@ -177,7 +130,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &brazil.VAT,
+			country: countries.Brazil,
 		},
 		{
 			name: "Bulgaria",
@@ -191,7 +144,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &bulgaria.VAT,
+			country: countries.Bulgaria,
 		},
 		{
 			name: "Canada",
@@ -205,7 +158,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &canada.VAT,
+			country: countries.Canada,
 		},
 		{
 			name: "Croatia",
@@ -219,7 +172,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &croatia.VAT,
+			country: countries.Croatia,
 		},
 		{
 			name: "Cyprus",
@@ -233,7 +186,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &cyprus.VAT,
+			country: countries.Cyprus,
 		},
 		{
 			name: "Czech Republic",
@@ -247,7 +200,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &czech_republic.VAT,
+			country: countries.CzechRepublic,
 		},
 		{
 			name: "Denmark",
@@ -261,7 +214,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &denmark.VAT,
+			country: countries.Denmark,
 		},
 		{
 			name: "Estonia",
@@ -275,7 +228,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &estonia.VAT,
+			country: countries.Estonia,
 		},
 		{
 			name: "Finland",
@@ -289,7 +242,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &finland.VAT,
+			country: countries.Finland,
 		},
 		{
 			name: "France",
@@ -303,7 +256,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &france.VAT,
+			country: countries.France,
 		},
 		{
 			name: "Germany",
@@ -317,7 +270,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &germany.VAT,
+			country: countries.Germany,
 		},
 		{
 			name: "Greece",
@@ -331,7 +284,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &greece.VAT,
+			country: countries.Greece,
 		},
 		{
 			name: "Hong Kong",
@@ -345,7 +298,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &hong_kong.VAT,
+			country: countries.HongKong,
 		},
 		{
 			name: "Hungary",
@@ -359,7 +312,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &hungary.VAT,
+			country: countries.Hungary,
 		},
 		{
 			name: "Italy",
@@ -373,7 +326,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &italy.VAT,
+			country: countries.Italy,
 		},
 		{
 			name: "Ireland",
@@ -387,7 +340,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &ireland.VAT,
+			country: countries.Ireland,
 		},
 		{
 			name: "Kazakhstan",
@@ -401,7 +354,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &kazakhstan.VAT,
+			country: countries.Kazakhstan,
 		},
 		{
 			name: "Latvia",
@@ -415,7 +368,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &latvia.VAT,
+			country: countries.Latvia,
 		},
 		{
 			name: "Liechtenstein",
@@ -429,7 +382,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &liechtenstein.VAT,
+			country: countries.Liechtenstein,
 		},
 		{
 			name: "Lithuania",
@@ -443,7 +396,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &lithuania.VAT,
+			country: countries.Lithuania,
 		},
 		{
 			name: "Luxembourg",
@@ -457,7 +410,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &luxembourg.VAT,
+			country: countries.Luxembourg,
 		},
 		{
 			name: "Malta",
@@ -471,7 +424,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &malta.VAT,
+			country: countries.Malta,
 		},
 		{
 			name: "Netherlands",
@@ -485,7 +438,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &netherlands.VAT,
+			country: countries.Netherlands,
 		},
 		{
 			name: "North Macedonia",
@@ -499,7 +452,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &north_macedonia.VAT,
+			country: countries.NorthMacedonia,
 		},
 		{
 			name: "Norway",
@@ -513,7 +466,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &norway.VAT,
+			country: countries.Norway,
 		},
 		{
 			name: "Peru",
@@ -527,7 +480,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &peru.VAT,
+			country: countries.Peru,
 		},
 		{
 			name: "Poland",
@@ -541,7 +494,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &poland.VAT,
+			country: countries.Poland,
 		},
 		{
 			name: "Portugal",
@@ -555,7 +508,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &portugal.VAT,
+			country: countries.Portugal,
 		},
 		{
 			name: "Romania",
@@ -569,7 +522,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &romania.VAT,
+			country: countries.Romania,
 		},
 		{
 			name: "Russia",
@@ -583,7 +536,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &russia.VAT,
+			country: countries.Russia,
 		},
 		{
 			name: "San Marino",
@@ -597,7 +550,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &san_marino.VAT,
+			country: countries.SanMarino,
 		},
 		{
 			name: "Serbia",
@@ -611,7 +564,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &serbia.VAT,
+			country: countries.Serbia,
 		},
 		{
 			name: "Slovakia",
@@ -625,7 +578,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &slovakia.VAT,
+			country: countries.Slovakia,
 		},
 		{
 			name: "Slovenia",
@@ -639,7 +592,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &slovenia.VAT,
+			country: countries.Slovenia,
 		},
 		{
 			name: "Spain",
@@ -653,7 +606,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &spain.VAT,
+			country: countries.Spain,
 		},
 		{
 			name: "Sweden",
@@ -667,7 +620,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &sweden.VAT,
+			country: countries.Sweden,
 		},
 		{
 			name: "Switzerland",
@@ -681,7 +634,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &switzerland.VAT,
+			country: countries.Switzerland,
 		},
 		{
 			name: "Turkey",
@@ -695,7 +648,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &turkey.VAT,
+			country: countries.Turkey,
 		},
 		{
 			name: "Ukraine",
@@ -709,7 +662,7 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &ukraine.VAT,
+			country: countries.Ukraine,
 		},
 		{
 			name: "United Kingdom",
@@ -723,7 +676,28 @@ func TestCheckVAT(t *testing.T) {
 					want:   false,
 				},
 			},
-			country: &united_kingdom.VAT,
+			country: countries.UnitedKingdom,
+		},
+		{
+			name: "Multiple countries",
+			args: []args{
+				{
+					values: mocks.SpainValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.FranceValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.GermanyValidTests,
+					want:   true,
+				},
+				{
+					values: mocks.ItalyValidTests,
+					want:   true,
+				},
+			},
 		},
 	}
 	for _, tt := range tests {
@@ -746,9 +720,16 @@ func TestCheckVAT(t *testing.T) {
 				t.Run(
 					name, func(t *testing.T) {
 
-						got, _ := CheckVAT(value, tt.country)
+						got := new(CheckResult)
+
+						if &tt.country == nil {
+							got, _ = Validate(value)
+						} else {
+							got, _ = Validate(value, tt.country)
+						}
+
 						if got.IsValid != arg.want {
-							t.Errorf("CheckVAT() got = %v, want %v", got, arg.want)
+							t.Errorf("Validate() got = %v, want %v", got, arg.want)
 						}
 					},
 				)
