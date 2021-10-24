@@ -25,8 +25,6 @@ go get -u github.com/ltns35/go-vat
 ## :dart: Features
 
 - [x] Check the validity of VAT numbers.
-- [ ] Display with format.
-- [ ] Retrieve the list of available taxes for each country.
 - [x] Extendable with custom countries/rules
 - [x] Offline
 
@@ -35,16 +33,16 @@ go get -u github.com/ltns35/go-vat
 ```go
 
 // Check against all supported countries validators.
-vatResult, err := vat.CheckVAT("ADE000000E")
+vatResult, err := vat.Validate("ADE000000E")
 if err != nil {
 // Handle error
 }
 
 // Check ONLY against Andorra validator.
 countries := []countries.Calculer{
-andorra.VAT,
+countries.Andorra,
 }
-vatResult, err = vat.CheckVAT("ADE000000E", countries...)
+vatResult, err = vat.Validate("ADE000000E", countries...)
 
 // output: vatResult
 //
