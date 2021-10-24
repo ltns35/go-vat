@@ -5,8 +5,8 @@ import (
 )
 
 type CheckResult struct {
-	Value              string             `json:"value"`
-	IsValid            bool               `json:"isValid"`
-	IsSupportedCountry bool               `json:"isSupportedCountry"`
-	Country            *countries.Country `json:"country"`
+	Value              string            `json:"value"`
+	IsValid            bool              `json:"isValid"`
+	IsSupportedCountry bool              `json:"isSupportedCountry"`
+	Country            countries.Country `json:"country"`
 }
