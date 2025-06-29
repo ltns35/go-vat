@@ -729,7 +729,7 @@ func TestCheckVAT(t *testing.T) {
 						}
 
 						if got.IsValid != arg.want {
-							t.Errorf("Validate() got = %v, want %v", got, arg.want)
+							t.Errorf("Validate() got = %+v, want %+v", got, arg.want)
 						}
 					},
 				)
