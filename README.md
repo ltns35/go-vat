@@ -11,17 +11,8 @@ The intention of this library is to offer to all gophers the ability to validate
 stored in a database.
 
 ## :gear: Installation
-
-Go v1.17.x or newer (RECOMMENDED)
-
 ```
 go install github.com/ltns35/go-vat
-```
-
-Go v1.16.x or older
-
-```
-go get -u github.com/ltns35/go-vat
 ```
 
 ## :dart: Features
@@ -142,13 +133,6 @@ If you need a country is not yet supported by the library **open a new issue** o
 merged.
 
 ## :test_tube: Testing
-
-The library is tested against the 4 latest stable major versions of Go.
-
-- 1.23.x
-- 1.22.x
-- 1.17.x
-- 1.16.x
 
 All the validators has been tested individually to ensure the correct working, if you need more tests don't hesitate to
 open a new issue with the values you want to be tested.
