@@ -56,8 +56,6 @@ linters:
 formatters:
     enable:
         - gofmt
-    golines:
-        max-len: 130
 
     exclusions:
         paths:
