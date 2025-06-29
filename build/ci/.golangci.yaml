@@ -37,12 +37,17 @@ linters:
         - wastedassign
         - whitespace
         - wrapcheck
-        - wsl
+        - wsl_v5
     settings:
         cyclop:
             max-complexity: 15
         nestif:
             min-complexity: 15
+        revive:
+            enable-all: true
+            rules:
+                -   name: var-naming
+                    disabled: true
     exclusions:
         presets:
             - comments
