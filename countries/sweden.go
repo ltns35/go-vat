@@ -3,7 +3,7 @@ package countries
 import (
 	"math"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type sweden struct {
@@ -27,17 +27,18 @@ var Sweden = sweden{
 }
 
 func (s sweden) Calc(vat string) bool {
-
 	// Calculate R where R = R1 + R3 + R5 + R7 + R9, and Ri = INT(Ci/5) + (Ci*2) modulo 10
-	var R float64 = 0
-	for i := 0; i < 9; i = i + 2 {
+	var R float64
+
+	for i := 0; i < 9; i += 2 {
 		num := utils.IntAt(vat, i)
 		R += math.Floor(float64(num/5)) + float64((num*2)%10)
 	}
 
 	// Calculate S where S = C2 + C4 + C6 + C8
 	S := 0
-	for j := 1; j < 9; j = j + 2 {
+
+	for j := 1; j < 9; j += 2 {
 		num := utils.IntAt(vat, j)
 		S += num
 	}

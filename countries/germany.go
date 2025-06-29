@@ -3,7 +3,7 @@ package countries
 import (
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type germany struct {
@@ -27,16 +27,16 @@ var Germany = germany{
 }
 
 func (g germany) Calc(vat string) bool {
-
 	// Checks the check digits of a German VAT number.
-	var product = 10
-	var sum = 0
-	var checkDigit = 0
+	var (
+		product    = 10
+		checkDigit int
+	)
 
-	for i := 0; i < 8; i++ {
+	for i := range 8 {
 		// Extract the next digit and implement peculiar algorithm!.
 		num := utils.IntAt(vat, i)
-		sum = (num + product) % 10
+		sum := (num + product) % 10
 
 		if sum == 0 {
 			sum = 10

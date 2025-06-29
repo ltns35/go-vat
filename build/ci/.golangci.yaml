@@ -1,0 +1,66 @@
+version: "2"
+linters:
+    default: none
+    enable:
+        - asciicheck
+        - bidichk
+        - bodyclose
+        - copyloopvar
+        - cyclop
+        - errorlint
+        - exhaustive
+        - exptostd
+        - forcetypeassert
+        - gocritic
+        - gosec
+        - gosmopolitan
+        - iface
+        - intrange
+        - makezero
+        - mirror
+        - nestif
+        - nilnesserr
+        - nlreturn
+        - nonamedreturns
+        - nosprintfhostport
+        - prealloc
+        - recvcheck
+        - revive
+        - sloglint
+        - spancheck
+        - testifylint
+        - thelper
+        - tparallel
+        - unconvert
+        - usestdlibvars
+        - usetesting
+        - wastedassign
+        - whitespace
+        - wrapcheck
+        - wsl
+    settings:
+        cyclop:
+            max-complexity: 15
+        nestif:
+            min-complexity: 15
+    exclusions:
+        presets:
+            - comments
+            - common-false-positives
+            - legacy
+            - std-error-handling
+        paths:
+            - third_party$
+            - builtin$
+            - examples$
+formatters:
+    enable:
+        - gofmt
+    golines:
+        max-len: 130
+
+    exclusions:
+        paths:
+            - third_party$
+            - builtin$
+            - examples$

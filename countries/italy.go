@@ -4,7 +4,7 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type italy struct {
@@ -42,7 +42,6 @@ var Italy = italy{
 }
 
 func (i italy) Calc(vat string) bool {
-
 	beginNumStr := vat[:7]
 	beginNum, _ := strconv.Atoi(beginNumStr)
 
@@ -58,11 +57,10 @@ func (i italy) Calc(vat string) bool {
 		return false
 	}
 
-	var total float64 = 0
+	var total float64
 
 	// Extract the next digit and multiply by the appropriate
-	for j := 0; j < 10; j++ {
-
+	for j := range 10 {
 		num := utils.IntAt(vat, j)
 		temp = num * i.Rules.Multipliers["common"][j]
 
@@ -71,7 +69,6 @@ func (i italy) Calc(vat string) bool {
 		} else {
 			total += float64(temp)
 		}
-
 	}
 
 	// Establish check digit.

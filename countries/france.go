@@ -29,7 +29,6 @@ var France = france{
 }
 
 func (f france) Calc(vat string) bool {
-
 	// Checks the check digits of a French VAT number.
 	regex := regexp.MustCompile("^\\d{11}$")
 

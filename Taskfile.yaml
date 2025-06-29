@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+    lint:
+        vars:
+            FIX: '{{default "" .FIX}}'
+        cmds:
+            - golangci-lint run -c build/ci/.golangci.yaml --color always {{.FIX}}
+
+    lint-fix:
+        cmds:
+            -   task: lint
+                vars:
+                    FIX: --fix

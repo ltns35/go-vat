@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type switzerland struct {
@@ -37,10 +37,9 @@ var Switzerland = switzerland{
 }
 
 func (s switzerland) Calc(vat string) bool {
-
 	total := 0
-	for i := 0; i < 8; i++ {
 
+	for i := range 8 {
 		num := utils.IntAt(vat, i)
 		total += num * s.Rules.Multipliers["common"][i]
 	}

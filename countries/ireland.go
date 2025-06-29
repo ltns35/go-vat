@@ -3,7 +3,7 @@ package countries
 import (
 	"regexp"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type ireland struct {
@@ -44,7 +44,6 @@ var Ireland = ireland{
 }
 
 func (i ireland) Calc(vat string) bool {
-
 	if _, ok := i.Rules.TypeFormats["first"]; !ok {
 		return false
 	} else if _, ok = i.Rules.TypeFormats["third"]; !ok {
@@ -56,7 +55,6 @@ func (i ireland) Calc(vat string) bool {
 	regex := regexp.MustCompile(i.Rules.TypeFormats["first"])
 
 	if regex.MatchString(vat) {
-
 		firstStr := vat[:1]
 		middleStr := vat[2:7]
 		lastStr := vat[7:]
@@ -66,7 +64,7 @@ func (i ireland) Calc(vat string) bool {
 
 	total := 0
 
-	for j := 0; j < 7; j++ {
+	for j := range 7 {
 		// Extract the next digit and multiply by the counter.
 		num := utils.IntAt(newVat, j)
 		total += num * i.Rules.Multipliers["common"][j]
@@ -84,11 +82,10 @@ func (i ireland) Calc(vat string) bool {
 		} else {
 			total += 9
 		}
-
 	}
 
 	// Establish check digit using modulus 23, and translate to char. equivalent.
-	total = total % 23
+	total %= 23
 
 	totalStr := string(rune(total + 64))
 

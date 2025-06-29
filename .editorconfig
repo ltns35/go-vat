@@ -1,0 +1,24 @@
+# Root EditorConfig file: ensures this is the root config file
+root = true
+
+# General configuration for all files
+[*]
+# Unix-style newlines
+end_of_line = lf
+# Use UTF-8 encoding
+charset = utf-8
+# Remove any trailing whitespaces
+trim_trailing_whitespace = true
+# Insert a newline at the end of each file
+insert_final_newline = true
+
+# Indent everything with tabs, each equivalent to 4 spaces
+indent_style = tab
+tab_width = 4
+
+# Additional file-specific settings if needed
+
+# Config for markdown files
+[*.md]
+trim_trailing_whitespace = false
+

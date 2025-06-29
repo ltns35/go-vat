@@ -3,7 +3,7 @@ package countries
 import (
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type malta struct {
@@ -37,11 +37,10 @@ var Malta = malta{
 }
 
 func (m malta) Calc(vat string) bool {
-
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 6; i++ {
+	for i := range 6 {
 		num := utils.IntAt(vat, i)
 		total += num * m.Rules.Multipliers["common"][i]
 	}

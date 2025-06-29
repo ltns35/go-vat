@@ -26,7 +26,6 @@ var Belgium = belgium{
 }
 
 func (b belgium) Calc(vat string) bool {
-
 	newVat := vat
 	if len(vat) == 9 {
 		newVat = "0" + vat

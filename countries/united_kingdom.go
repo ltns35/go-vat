@@ -4,7 +4,7 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type unitedKingdom struct {
@@ -42,7 +42,6 @@ var UnitedKingdom = unitedKingdom{
 }
 
 func (u unitedKingdom) Calc(vat string) bool {
-
 	// Government departments
 	beginStr := vat[:2]
 	if beginStr == "GD" {
@@ -64,6 +63,7 @@ func (u unitedKingdom) GetCountry() Country {
 
 func isGovernmentDepartment(vat string) bool {
 	const expect = 500
+
 	num := utils.IntAt(vat, 2)
 
 	return num < expect
@@ -71,14 +71,14 @@ func isGovernmentDepartment(vat string) bool {
 
 func isHealthAuthorities(vat string) bool {
 	const expect = 499
+
 	num := utils.IntAt(vat, 2)
 
 	return num > expect
 }
 
 func isStandardOrCommercialNumber(vat string, multipliers []int) bool {
-
-	var total float64 = 0
+	var total float64
 
 	// 0 VAT numbers disallowed!
 	zeroVAT, _ := strconv.Atoi(vat)
@@ -91,7 +91,7 @@ func isStandardOrCommercialNumber(vat string, multipliers []int) bool {
 	no, _ := strconv.Atoi(noStr)
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 7; i++ {
+	for i := range 7 {
 		num := utils.IntAt(vat, i)
 		total += float64(num * multipliers[i])
 	}
@@ -103,7 +103,7 @@ func isStandardOrCommercialNumber(vat string, multipliers []int) bool {
 	checkDigit := total
 
 	for checkDigit > 0 {
-		checkDigit = checkDigit - 97
+		checkDigit -= 97
 	}
 
 	// Get the absolute value and compare it with the last two characters of the VAT number. If the
@@ -121,9 +121,9 @@ func isStandardOrCommercialNumber(vat string, multipliers []int) bool {
 	// Now try the new method by subtracting 55 from the check digit if we can - else add 42
 
 	if checkDigit >= 55 {
-		checkDigit = checkDigit - 55
+		checkDigit -= 55
 	} else {
-		checkDigit = checkDigit + 42
+		checkDigit += 42
 	}
 
 	return checkDigit == float64(lastDigits) && no > 1000000

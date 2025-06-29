@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 // Do not sort, it's the algorithm.
@@ -53,7 +53,6 @@ var Spain = spain{
 }
 
 func (s spain) Calc(vat string) bool {
-
 	if len(s.Rules.Additional) == 0 {
 		return false
 	}
@@ -94,18 +93,16 @@ func (s spain) GetCountry() Country {
 }
 
 func extractDigitAndMultiplyByCounter(vat string, multipliers []int, total float64) int {
-
-	var temp float64 = 0
 	result := total
-	for i := 0; i < 7; i++ {
 
+	for i := range 7 {
 		digit := utils.IntAt(vat, i+1)
-		temp = float64(digit * multipliers[i])
+		weightedDigit := float64(digit * multipliers[i])
 
-		if temp > 9 {
-			result += math.Floor(temp/10) + math.Mod(temp, 10)
+		if weightedDigit > 9 {
+			result += math.Floor(weightedDigit/10) + math.Mod(weightedDigit, 10)
 		} else {
-			result += temp
+			result += weightedDigit
 		}
 	}
 
@@ -113,7 +110,6 @@ func extractDigitAndMultiplyByCounter(vat string, multipliers []int, total float
 }
 
 func isNationalJuridicalEntities(vat string, multipliers []int) bool {
-
 	total := extractDigitAndMultiplyByCounter(vat, multipliers, 0)
 
 	// Now calculate the check digit itself.
@@ -129,7 +125,6 @@ func isNationalJuridicalEntities(vat string, multipliers []int) bool {
 }
 
 func isNonNationalJuridical(vat string, multipliers []int) bool {
-
 	total := extractDigitAndMultiplyByCounter(vat, multipliers, 0)
 
 	// Now calculate the check digit itself.
@@ -143,13 +138,13 @@ func isNonNationalJuridical(vat string, multipliers []int) bool {
 }
 
 func isPersonalYtoZ(vat string) bool {
-
 	tempNumber := vat
 
 	firstChar := utils.StringAt(vat, 0)
 	if firstChar == "Y" {
 		tempNumber = strings.ReplaceAll(vat, "Y", "1")
 	}
+
 	if firstChar == "Z" {
 		tempNumber = strings.ReplaceAll(vat, "Z", "2")
 	}

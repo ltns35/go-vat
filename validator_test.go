@@ -9,7 +9,6 @@ import (
 )
 
 func TestCheckVAT(t *testing.T) {
-
 	type args struct {
 		values []string
 		want   bool
@@ -702,11 +701,9 @@ func TestCheckVAT(t *testing.T) {
 	}
 	for _, tt := range tests {
 		for _, arg := range tt.args {
-
 			count := 0
 
 			for _, value := range arg.values {
-
 				count++
 
 				valid := "VALID"
@@ -719,8 +716,7 @@ func TestCheckVAT(t *testing.T) {
 
 				t.Run(
 					name, func(t *testing.T) {
-
-						got := new(CheckResult)
+						var got *CheckResult
 
 						if tt.country == nil {
 							got, _ = Validate(value)
@@ -733,10 +729,7 @@ func TestCheckVAT(t *testing.T) {
 						}
 					},
 				)
-
 			}
-
 		}
-
 	}
 }

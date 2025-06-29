@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type poland struct {
@@ -38,17 +38,16 @@ var Poland = poland{
 }
 
 func (p poland) Calc(vat string) bool {
-
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 9; i++ {
+	for i := range 9 {
 		num := utils.IntAt(vat, i)
 		total += num * p.Rules.Multipliers["common"][i]
 	}
 
 	// Establish check digits subtracting modulus 11 from 11.
-	total = total % 11
+	total %= 11
 	if total > 9 {
 		total = 0
 	}

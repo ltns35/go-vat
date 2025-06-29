@@ -41,11 +41,10 @@ func (p portugal) GetCountry() Country {
 }
 
 func (p portugal) Calc(vat string) bool {
-
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 8; i++ {
+	for i := range 8 {
 		total += int(vat[i]) * p.Rules.Multipliers["common"][i]
 	}
 
@@ -57,6 +56,7 @@ func (p portugal) Calc(vat string) bool {
 
 	// Compare it with the last character of the VAT number. If it's the same, then it's valid.
 	lastChar := string(vat[len(vat)-1])
+
 	expect, err := strconv.Atoi(lastChar)
 	if err != nil {
 		return false

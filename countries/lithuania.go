@@ -3,7 +3,7 @@ package countries
 import (
 	"regexp"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type lithuania struct {
@@ -74,18 +74,16 @@ func (l lithuania) GetCountry() Country {
 }
 
 func extractDigit1(vat string, multiplierList []int, key int) int {
-
 	num := utils.IntAt(vat, key)
 
 	return num * multiplierList[key]
 }
 
 func doubleCheckCalculation(vat string, total int, rules CountryRules) int {
-
 	result := total
 	if result%11 == 10 {
 		result = 0
-		for i := 0; i < 8; i++ {
+		for i := range 8 {
 			result += extractDigit1(vat, rules.Multipliers["short"], i)
 		}
 	}
@@ -95,10 +93,12 @@ func doubleCheckCalculation(vat string, total int, rules CountryRules) int {
 
 func extractDigit2(vat string, total int) int {
 	result := total
-	for i := 0; i < 8; i++ {
+
+	for i := range 8 {
 		num := utils.IntAt(vat, i)
 		result += num * (i + 1)
 	}
+
 	return result
 }
 
@@ -112,12 +112,10 @@ func checkDigitLithuania(total int) int {
 }
 
 func check9DigitVat(vat string, rules CountryRules) bool {
-
 	// 9 character VAT numbers are for legal persons
 	total := 0
 
 	if len(vat) == 9 {
-
 		// 8th character must be one
 		regex := regexp.MustCompile("^\\d{7}1")
 		if !regex.MatchString(vat) {
@@ -143,10 +141,9 @@ func check9DigitVat(vat string, rules CountryRules) bool {
 }
 
 func extractDigit12(vat string, total int, rules CountryRules) int {
-
 	result := total
 
-	for k := 0; k < 11; k++ {
+	for k := range 11 {
 		result += extractDigit1(vat, rules.Multipliers["med"], k)
 	}
 
@@ -154,13 +151,12 @@ func extractDigit12(vat string, total int, rules CountryRules) int {
 }
 
 func doubleCheckCalculation12(vat string, total int, rules CountryRules) int {
-
 	result := total
 
 	if total%11 == 10 {
 		result = 0
 
-		for l := 0; l < 11; l++ {
+		for l := range 11 {
 			result += extractDigit1(vat, rules.Multipliers["alt"], l)
 		}
 	}
@@ -169,12 +165,10 @@ func doubleCheckCalculation12(vat string, total int, rules CountryRules) int {
 }
 
 func check12DigitVat(vat string, rules CountryRules) bool {
-
 	total := 0
 
 	// 12 character VAT numbers are for temporarily registered taxpayers
 	if len(vat) == 12 {
-
 		if rules.Check == "" {
 			return false
 		}

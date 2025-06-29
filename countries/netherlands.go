@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type netherlands struct {
@@ -44,8 +44,7 @@ var Netherlands = netherlands{
 }
 
 func (n netherlands) Calc(vat string) bool {
-
-	regex := regexp.MustCompile(`[\ \-\_]`)
+	regex := regexp.MustCompile(`[\-_]`)
 
 	vat = regex.ReplaceAllString(vat, "")
 	vat = strings.ToUpper(vat)
@@ -66,6 +65,7 @@ func (n netherlands) Calc(vat string) bool {
 	chars := strings.Split(vatFull, "")
 
 	characterValues := make([]int, len(chars))
+
 	for i, str := range chars {
 		char := []rune(str)
 		characterValues[i] = getCharValue(char[0])
@@ -74,13 +74,13 @@ func (n netherlands) Calc(vat string) bool {
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 8; i++ {
+	for i := range 8 {
 		num := utils.IntAt(numb, i)
 		total += num * n.Rules.Multipliers["common"][i]
 	}
 
 	// Establish check digits by getting modulus 11.
-	total = total % 11
+	total %= 11
 	if total > 9 {
 		total = 0
 	}
@@ -102,7 +102,6 @@ func (n netherlands) GetCountry() Country {
 }
 
 func getCharValue(char rune) int {
-
 	// if one of these set values
 	if char == '+' {
 		return 36
@@ -124,7 +123,6 @@ func getCharValue(char rune) int {
 }
 
 func isNinetySevenMod(value string) bool {
-
 	remainder := mod(value, 97)
 
 	return remainder == 1
@@ -132,7 +130,6 @@ func isNinetySevenMod(value string) bool {
 
 // custom module function, to check module on values above Number limit
 func mod(value string, divisor int) int {
-
 	// Initialize result
 	res := 0
 

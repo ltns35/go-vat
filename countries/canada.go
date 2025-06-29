@@ -30,7 +30,6 @@ var Canada = canada{
 }
 
 func (c canada) Calc(vat string) bool {
-
 	vat = fmt.Sprintf("CA%s", vat)
 
 	return c.isGST(vat) ||

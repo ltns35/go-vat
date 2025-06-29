@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type croatia struct {
@@ -25,16 +25,14 @@ var Croatia = croatia{
 }
 
 func (c croatia) Calc(vat string) bool {
-
 	// Checks the check digits of a Croatian VAT number using ISO 7064, MOD 11-10 for check digit.
 	product := 10
-	sum := 0
 
-	for i := 0; i < 10; i++ {
+	for i := range 10 {
 		// Extract the next digit and implement the algorithm
 		num := utils.IntAt(vat, i)
 
-		sum = (num + product) % 10
+		sum := (num + product) % 10
 		if sum == 0 {
 			sum = 10
 		}

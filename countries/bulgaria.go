@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type bulgaria struct {
@@ -64,7 +64,6 @@ var Bulgaria = bulgaria{
 }
 
 func (b bulgaria) Calc(vat string) bool {
-
 	if len(vat) == 9 {
 		return checkNineLengthVat(vat)
 	}
@@ -79,11 +78,9 @@ func (b bulgaria) GetCountry() Country {
 }
 
 func increase(value int, vat string, from int, to int, incr int) int {
-
 	result := value
 
 	for i := from; i < to; i++ {
-
 		num := utils.IntAt(vat, i)
 		result += num * (i + incr)
 	}
@@ -92,7 +89,6 @@ func increase(value int, vat string, from int, to int, incr int) int {
 }
 
 func increase2(value int, vat string, from int, to int, multipliers []int) int {
-
 	result := value
 
 	for i := from; i < to; i++ {
@@ -104,13 +100,11 @@ func increase2(value int, vat string, from int, to int, multipliers []int) int {
 }
 
 func checkNineLengthVat(vat string) bool {
-
-	var total float64 = 0
 	temp := increase(0, vat, 0, 8, 1)
 
 	expect := utils.IntAt(vat, 8)
 
-	total = math.Mod(float64(temp), 11)
+	total := math.Mod(float64(temp), 11)
 	if total != 10 {
 		return total == float64(expect)
 	}
@@ -135,11 +129,10 @@ func isPhysicalPerson(vat string, multipliers map[string][]int) bool {
 		month, _ := strconv.Atoi(monthStr)
 
 		if (month > 0 && month < 13) || (month > 20 && month < 33) || (month > 40 && month < 53) {
-
 			total := increase2(0, vat, 0, 9, multipliers["physical"])
 
 			// Establish check digit.
-			total = total % 11
+			total %= 11
 			if total == 10 {
 				total = 0
 			}
@@ -149,7 +142,6 @@ func isPhysicalPerson(vat string, multipliers map[string][]int) bool {
 			if total == ninthDigit {
 				return true
 			}
-
 		}
 	}
 
@@ -157,7 +149,6 @@ func isPhysicalPerson(vat string, multipliers map[string][]int) bool {
 }
 
 func isForeigner(vat string, multipliers map[string][]int) bool {
-
 	// Extract the next digit and multiply by the counter.
 	total := increase2(0, vat, 0, 9, multipliers["foreigner"])
 
@@ -168,7 +159,6 @@ func isForeigner(vat string, multipliers map[string][]int) bool {
 }
 
 func miscellaneousVAT(vat string, multipliers map[string][]int) bool {
-
 	// Finally, if not yet identified, see if it conforms to a miscellaneous VAT number
 	total := increase2(0, vat, 0, 9, multipliers["miscellaneous"])
 

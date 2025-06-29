@@ -26,7 +26,6 @@ var Brazil = brazil{
 }
 
 func (b brazil) Calc(vat string) bool {
-
 	fields := strings.Split(vat, "")
 
 	numbers := make([]int, len(fields))
@@ -74,28 +73,25 @@ func (b brazil) GetCountry() Country {
 // @param numbers - Numbers used to generate checkers.
 // @param validators - Validators used to generate checkers.
 func generateCheckSums(numbers []int, validators []int) []int {
-
 	var checker = []int{
 		0,
 		0,
 	}
 
 	for i, validator := range validators {
-
 		if i == 0 {
 			checker[0] = 0
 		} else {
-			checker[0] = checker[0] + numbers[i-1]*validator
+			checker[0] += numbers[i-1] * validator
 		}
 
-		checker[1] = checker[1] + numbers[i]*validator
+		checker[1] += numbers[i] * validator
 	}
 
 	return checker
 }
 
 func isRepeatedArray(numbers []int) bool {
-
 	for _, num := range numbers {
 		if numbers[0] != num {
 			return false
@@ -106,11 +102,9 @@ func isRepeatedArray(numbers []int) bool {
 }
 
 func remaining(num int) int {
-
 	if num%11 < 2 {
 		return 0
-	} else {
-		return 11 - (num % 11)
 	}
 
+	return 11 - (num % 11)
 }

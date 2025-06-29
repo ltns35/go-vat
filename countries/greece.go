@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type greece struct {
@@ -37,7 +37,6 @@ var Greece = greece{
 }
 
 func (g greece) Calc(vat string) bool {
-
 	total := 0
 
 	// eight character numbers should be prefixed with an 0.
@@ -48,13 +47,13 @@ func (g greece) Calc(vat string) bool {
 	}
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 8; i++ {
+	for i := range 8 {
 		num := utils.IntAt(newVat, i)
 		total += num * g.Rules.Multipliers["common"][i]
 	}
 
 	// Establish check digit.
-	total = total % 11
+	total %= 11
 
 	if total > 9 {
 		total = 0

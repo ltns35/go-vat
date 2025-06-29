@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type romania struct {
@@ -38,7 +38,6 @@ var Romania = romania{
 }
 
 func (r romania) Calc(vat string) bool {
-
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
@@ -46,7 +45,7 @@ func (r romania) Calc(vat string) bool {
 
 	multipliers := r.Rules.Multipliers["common"][10-vatLength:]
 
-	for i := 0; i < vatLength-1; i++ {
+	for i := range vatLength - 1 {
 		num := utils.IntAt(vat, i)
 		total += num * multipliers[i]
 	}

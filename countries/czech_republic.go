@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type czechRepublic struct {
@@ -59,7 +59,6 @@ var CzechRepublic = czechRepublic{
 }
 
 func (c czechRepublic) Calc(vat string) bool {
-
 	if len(c.Rules.Additional) == 0 {
 		return false
 	}
@@ -68,7 +67,6 @@ func (c czechRepublic) Calc(vat string) bool {
 		isIndividualType2(vat, c.Rules.Multipliers["common"], c.Rules.Additional[2], c.Rules.Lookup...) ||
 		isIndividualType3(vat, c.Rules.Additional[3]) ||
 		isIndividualType1(vat, c.Rules.Additional[1])
-
 }
 
 func (c czechRepublic) GetCountry() Country {
@@ -76,15 +74,13 @@ func (c czechRepublic) GetCountry() Country {
 }
 
 func isLegalEntities(vat string, multipliers []int, additional string) bool {
-
 	regex := regexp.MustCompile(additional)
 
 	if regex.MatchString(vat) {
-
 		total := 0
 
 		// Extract the next digit and multiply by the counter.
-		for i := 0; i < len(multipliers); i++ {
+		for i := range multipliers {
 			num := utils.IntAt(vat, i)
 			total += num * multipliers[i]
 		}
@@ -107,10 +103,8 @@ func isLegalEntities(vat string, multipliers []int, additional string) bool {
 }
 
 func isIndividualType1(vat string, additional string) bool {
-
 	regex := regexp.MustCompile(additional)
 	if regex.MatchString(vat) {
-
 		numStr := vat[:2]
 		num, _ := strconv.Atoi(numStr)
 
@@ -121,15 +115,13 @@ func isIndividualType1(vat string, additional string) bool {
 }
 
 func isIndividualType2(vat string, multipliers []int, additional string, lookup ...int) bool {
-
 	regex := regexp.MustCompile(additional)
 
 	if regex.MatchString(vat) {
-
-		var total float64 = 0
+		var total float64
 
 		// Extract the next digit and multiply by the counter.
-		for i := 0; i < len(multipliers); i++ {
+		for i := range multipliers {
 			num := utils.IntAt(vat, i+1)
 			total += float64(num) * float64(multipliers[i])
 		}
@@ -159,11 +151,9 @@ func isIndividualType2(vat string, multipliers []int, additional string, lookup 
 }
 
 func isIndividualType3(vat string, additional string) bool {
-
 	regex := regexp.MustCompile(additional)
 
 	if regex.MatchString(vat) {
-
 		num1, _ := strconv.Atoi(vat[:2])
 		num2, _ := strconv.Atoi(vat[2:4])
 		num3, _ := strconv.Atoi(vat[4:6])

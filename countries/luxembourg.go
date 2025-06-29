@@ -25,14 +25,13 @@ var Luxembourg = luxembourg{
 }
 
 func (l luxembourg) Calc(vat string) bool {
-
 	expectStr := vat[6:8]
 	expect, _ := strconv.Atoi(expectStr)
 
 	// Checks the check digits of a VAT number.
 	checkDigitStr := vat[:6]
 	checkDigit, _ := strconv.Atoi(checkDigitStr)
-	checkDigit = checkDigit % 89
+	checkDigit %= 89
 
 	return checkDigit == expect
 }

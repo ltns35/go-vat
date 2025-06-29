@@ -25,7 +25,6 @@ var Slovakia = slovakia{
 }
 
 func (s slovakia) Calc(vat string) bool {
-
 	expect := 0
 
 	vatNum, _ := strconv.Atoi(vat)

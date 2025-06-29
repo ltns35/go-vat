@@ -1,3 +1,3 @@
 module github.com/ltns35/go-vat
 
-go 1.17
+go 1.24

@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type hungary struct {
@@ -36,11 +36,10 @@ var Hungary = hungary{
 }
 
 func (h hungary) Calc(vat string) bool {
-
 	total := 0
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 7; i++ {
+	for i := range 7 {
 		num := utils.IntAt(vat, i)
 		total += num * h.Rules.Multipliers["common"][i]
 	}

@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type norway struct {
@@ -37,12 +37,11 @@ var Norway = norway{
 }
 
 func (n norway) Calc(vat string) bool {
-
 	total := 0
 	// See http://www.brreg.no/english/coordination/number.html
 
 	// Extract the next digit and multiply by the counter.
-	for i := 0; i < 8; i++ {
+	for i := range 8 {
 		num := utils.IntAt(vat, i)
 		total += num * n.Rules.Multipliers["common"][i]
 	}
@@ -55,7 +54,6 @@ func (n norway) Calc(vat string) bool {
 	}
 
 	if total < 10 {
-
 		// Compare it with the last character of the VAT number. If it's the same, then it's valid.
 		expect := utils.IntAt(vat, 8)
 

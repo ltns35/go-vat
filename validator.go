@@ -63,7 +63,6 @@ var allCountries = []countries.Calculer{
 }
 
 func makeResult(vat string, isValid bool, isSupported bool, country countries.Country) *CheckResult {
-
 	var checkResult CheckResult
 
 	checkResult.Value = vat
@@ -78,8 +77,7 @@ func makeResult(vat string, isValid bool, isSupported bool, country countries.Co
 }
 
 func removeExtraChars(vat string) string {
-
-	regex := regexp.MustCompile(`(\s|-|\.|\/)+`)
+	regex := regexp.MustCompile(`(\s|-|\.|/)+`)
 
 	vat = strings.ToUpper(vat)
 	vat = regex.ReplaceAllString(vat, "")
@@ -88,7 +86,6 @@ func removeExtraChars(vat string) string {
 }
 
 func getCountryCodes(country countries.Country) []string {
-
 	codes := country.Codes
 
 	if country.Name == countries.Greece.Name {
@@ -101,9 +98,7 @@ func getCountryCodes(country countries.Country) []string {
 }
 
 func getCountry(vat string, countriesList []countries.Calculer) (countries.Calculer, error) {
-
 	for _, c := range countriesList {
-
 		country := c.GetCountry()
 		if startsWithCode(vat, country) || (!isVATStartWithCountryCode(country.Name) && isVATStartWithNumber(vat)) {
 			return c, nil
@@ -126,7 +121,6 @@ func startsWithCode(vat string, country countries.Country) bool {
 }
 
 func isVATStartWithCountryCode(countryName string) bool {
-
 	for _, country := range countriesVATDoesNotStartWithCountryCode {
 		if country == countryName {
 			return false
@@ -137,16 +131,13 @@ func isVATStartWithCountryCode(countryName string) bool {
 }
 
 func isVATStartWithNumber(vat string) bool {
-
 	regex := regexp.MustCompile("^\\d{2}")
 
 	return regex.MatchString(vat)
 }
 
 func isVatValidToRegexp(vat string, regexArr []string) (bool, *regexp.Regexp) {
-
 	for _, regexStr := range regexArr {
-
 		regex := regexp.MustCompile(regexStr)
 		isValid := regex.MatchString(vat)
 
@@ -159,7 +150,6 @@ func isVatValidToRegexp(vat string, regexArr []string) (bool, *regexp.Regexp) {
 }
 
 func isVatValid(vat string, country countries.Calculer) bool {
-
 	regexpValidRes, regex := isVatValidToRegexp(vat, country.GetCountry().Rules.Regex)
 
 	if !regexpValidRes {
@@ -173,7 +163,6 @@ func isVatValid(vat string, country countries.Calculer) bool {
 }
 
 func Validate(vat string, countriesList ...countries.Calculer) (*CheckResult, error) {
-
 	if strings.Trim(vat, " ") == "" {
 		return makeResult(vat, false, false, countries.Country{}), nil
 	}

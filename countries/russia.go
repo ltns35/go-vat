@@ -1,7 +1,7 @@
 package countries
 
 import (
-	"github.com/ltns35/go-vat/countries/utils"
+	"github.com/ltns35/go-vat/utils"
 )
 
 type russia struct {
@@ -74,18 +74,17 @@ func (r russia) GetCountry() Country {
 }
 
 func check10DigitINN(vat string, rules CountryRules) bool {
-
 	total := 0
 
 	if len(vat) == 10 {
-		for i := 0; i < 10; i++ {
+		for i := range 10 {
 			num := utils.IntAt(vat, i)
 			total += num * rules.Multipliers["m_1"][i]
 		}
 
-		total = total % 11
+		total %= 11
 		if total > 9 {
-			total = total % 10
+			total %= 10
 		}
 
 		// Compare it with the last character of the VAT number. If it is the same, then it's valid
@@ -98,30 +97,29 @@ func check10DigitINN(vat string, rules CountryRules) bool {
 }
 
 func check12DigitINN(vat string, rules CountryRules) bool {
-
 	total1 := 0
 	total2 := 0
 
 	if len(vat) == 12 {
-		for j := 0; j < 11; j++ {
+		for j := range 11 {
 			num := utils.IntAt(vat, j)
 			total1 += num * rules.Multipliers["m_2"][j]
 		}
 
-		total1 = total1 % 11
+		total1 %= 11
 
 		if total1 > 9 {
-			total1 = total1 % 10
+			total1 %= 10
 		}
 
-		for k := 0; k < 11; k++ {
+		for k := range 11 {
 			num := utils.IntAt(vat, k)
 			total2 += num * rules.Multipliers["m_3"][k]
 		}
 
-		total2 = total2 % 11
+		total2 %= 11
 		if total2 > 9 {
-			total2 = total2 % 10
+			total2 %= 10
 		}
 
 		// Compare the first check with the 11th character and the second check with the 12th and last
