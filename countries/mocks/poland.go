@@ -50,4 +50,6 @@ var PolandValidTests = []string{
 var PolandInvalidTests = []string{
 	"PL7122913628",
 	"PL7122913427",
+	"PL0000000000",
+	"PL1234567890",
 }

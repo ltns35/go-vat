@@ -212,6 +212,7 @@ var BelgiumValidTests = []string{
 	"BE897231786",
 	"BE897231885",
 	"BE897231984",
+	"BE1006023325",
 }
 
 var BelgiumInvalidTests = []string{
