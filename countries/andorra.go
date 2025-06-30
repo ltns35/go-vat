@@ -35,7 +35,7 @@ func (a andorra) Calc(vat string) bool {
 		return false
 	}
 
-	if !strings.Contains("ACDEFGLOPU", firstLetter) {
+	if !strings.Contains(andFirstLetterFull, firstLetter) {
 		return false
 	}
 
@@ -43,7 +43,7 @@ func (a andorra) Calc(vat string) bool {
 		return false
 	}
 
-	if strings.Contains("AL", firstLetter) && number > 699999 && number < 800000 {
+	if strings.Contains(andFirstLetterPrefix, firstLetter) && number > 699999 && number < 800000 {
 		return false
 	}
 
@@ -53,3 +53,8 @@ func (a andorra) Calc(vat string) bool {
 func (a andorra) GetCountry() Country {
 	return a.Country
 }
+
+const (
+	andFirstLetterFull   = "ACDEFGLOPU"
+	andFirstLetterPrefix = "AL"
+)
